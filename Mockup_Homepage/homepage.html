@@ -7,6 +7,7 @@
 
 	<title>Home Page</title>
 	<link href="style.css" rel="stylesheet">
+	<link href="dropdown.css" rel="stylesheet">
 
 </head>
 <body>
@@ -31,12 +32,24 @@
 			</a>
 		</div>
 	</div>
-	<div class="topnav">
-	  <a class="active" href="#home">Home</a>
-	  <a href="#news">News</a>
-	  <a href="#contact">Contact</a>
-	  <a href="#about">About</a>
-	</div>
+	<ul>
+	  <li><a  class="active" href="#home"><i class="fa-solid fa-house"></i></a></li>
+	  <li class="dropdown">
+	    <a href="javascript:void(0)" class="dropbtn">Genres</a>
+	    <div class="dropdown-content">
+	      <a href="#">Art</a>
+	      <a href="#">Phylosophy</a>
+	      <a href="#">Adventure</a>
+	      <a href="#">Horror</a>
+	      <a href="#">Romance</a>
+	      <a href="#">Sci-Fi</a>
+	      <a href="#">Drama</a>
+	    </div>
+	  </li>
+	  <li><a href="#contact">Contact</a></li>
+	  <li><a href="#about">About</a></li>
+	</ul>
+
 
 	<!-- Slideshow container -->
 	<div class="slideshow-container">
@@ -67,16 +80,82 @@
 	  <span class="dot" onclick="currentSlide(3)"></span>
 	</div>
 
-<!--	
-	<div class="section">
-	  <h2>Top Navigation Example</h2>
-	  <p>Some content..</p>
-	</div>
+	<br><br>
 
-	<div class="section">
-	  <h2>Contato</h2>
-	  <p>Some content..</p>
-	</div>-->
+	<div class="section box">
+		<div>
+		  <h2>Mais Populares</h2>
+		  <p>Clique para ver mais...</p>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="capa1.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2 class="product-title">The Hunger Games</h2>
+			<p>Suzanne Collins</p>
+			<h3>R$ 48,17</h3>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="capa2.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2 class="product-title">The Fault in Our Stars</h2>
+			<p>John Green</p>
+			<h3>R$ 41,99</h3>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="capa3.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2 class="product-title">The Hobbit</h2>
+			<p> J. R. R. Tolkien</p>
+			<h3>R$ 41,99</h3>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="capa4.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2>Harry Potter and the Sorcerer's Stone</h2>
+			<p> J.K. Rowling</p>
+			<h3>R$ 53,86</h3>
+		</div>
+	</div>
+	<div class="section box horror">
+		<div>
+		  <h2>Clássicos do Terror</h2>
+		  <p>Clique para ver mais...</p>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="tuba.png">
+			<img id="#review-stars"src="5stars.png">
+			<h2 class="product-title">Jaws</h2>
+			<p>Peter Benchley</p>
+			<h3>R$ 64,90</h3>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="it.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2 class="product-title">It: A Coisa</h2>
+			<p>Stephen King</p>
+			<h3>R$ 39,90</h3>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="drac.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2 class="product-title">Dracula</h2>
+			<p>Bram Stoker</p>
+			<h3>R$ 34,90</h3>
+		</div>
+		<div class="product-card">
+			<img class="product-img" src="ed.jpg">
+			<img id="#review-stars"src="5stars.png">
+			<h2>Edgar Allan Poe: Medo Clássico Vol. 1</h2>
+			<p> Edgar Allan Poe</p>
+			<h3>R$ 64,90</h3>
+		</div>
+	</div>
+	<div class="section bottom">
+	  <h2>Social Media: </h2>
+	  <i class="fa-brands fa-facebook"></i>
+	  <i class="fa-brands fa-instagram"></i>
+	  <i class="fa-brands fa-twitter"></i>
+	</div>
 	<script type="text/javascript" src="slideshow.js"></script>
 </body>
 </html>
