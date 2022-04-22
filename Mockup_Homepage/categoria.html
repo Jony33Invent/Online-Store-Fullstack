@@ -7,10 +7,12 @@
 
 	<title>Home Page</title>
 	<link href="styles/style.css" rel="stylesheet">
+	<link href="styles/category.css" rel="stylesheet">
 	<link href="styles/dropdown.css" rel="stylesheet">
 
 </head>
 <body>
+
 	<div class="div-block">
 
 		<div class="inline header-left">
@@ -33,9 +35,9 @@
 		</div>
 	</div>
 	<ul>
-	  <li><a  class="active" href="#home"><i class="fa-solid fa-house"></i></a></li>
+	  <li><a  class="" href="homepage.html"><i class="fa-solid fa-house"></i></a></li>
 	  <li class="dropdown">
-	    <a href="javascript:void(0)" class="dropbtn">Genres</a>
+	    <a href="javascript:void(0)" class="dropbtn active">Genres</a>
 	    <div class="dropdown-content">
 	      <a href="#">Art</a>
 	      <a href="#">Phylosophy</a>
@@ -43,18 +45,49 @@
 	      <a href="#">Horror</a>
 	      <a href="#">Romance</a>
 	      <a href="#">Sci-Fi</a>
-	      <a href="#">Fantasy</a>
+	      <a class="active" href="#">Fantasy</a>
 	      <a href="#">Drama</a>
 	    </div>
 	  </li>
 	  <li><a href="#contact">Contact</a></li>
 	  <li><a href="#about">About</a></li>
 	</ul>
-	<div class="section category" id="category-div">
+	<div class="title-div">
+		<h1 class="category-title">
+			Fantasy
+		</h1></div>
+	<div class="category-main">
+		<div class="categories-column">
+			<div class="column-title" > More Genres</div>
+			<div class="btn-category" > <a href="#">Art</a></div>
+			<div class="btn-category" > <a href="#">Phylosophy</a></div>
+			<div class="btn-category" > <a href="#">Adventure</a></div>
+			<div class="btn-category" > <a href="#">Horror</a></div>
+			<div class="btn-category" > <a href="#">Romance</a></div>
+			<div class="btn-category" > <a href="#">Sci-Fi</a></div>
+			<div class="btn-category" > <a href="#">Fantasy</a></div>
+			<div class="btn-category" > <a href="#">Drama</a></div><br>
+	     
+	      <!--<a class="btn-category" href="#">Phylosophy</a>
+	      <a class="btn-category" href="#">Adventure</a>
+	      <a class="btn-category" href="#">Horror</a>
+	      <a class="btn-category" href="#">Romance</a>
+	      <a class="btn-category" href="#">Sci-Fi</a>
+	      <a class="btn-category" href="#">Fantasy</a>
+	      <a class="btn-category" href="#">Drama</a>-->
+		</div>
+		<div>
+			<ul class="user-journey">
+				<li class="journey-item">Home</li>
+				<li><i class="fa-solid fa-angle-right"></i></li>
+				<li class="journey-item">Genres</li>
+				<li><i class="fa-solid fa-angle-right"></i></li>
+				<li class="journey-item">Fantasy</li>
+			</ul>
+			<div class="section category" id="category-div">
 
-	<h1 style="text-align: center; width:100%;">
-		Fantasy
-	</h1>
+			</div>
+		</div>
 	</div>
 	<script type="text/javascript" src="script/loadBooks.js"></script>
 </body>
