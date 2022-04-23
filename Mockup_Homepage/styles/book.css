@@ -1,0 +1,169 @@
+:root {
+    --secondary-color: #b0b0b0;
+    --borders-color: rgb(101, 101, 101);
+}
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--secondary-color) var(--bg-color);
+}
+
+#myBtn {
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    color: var(--bg-color);
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 16px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+#comprar {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    color: var(--bg-color);
+    text-align: center;
+    text-decoration: none;
+    display: inline;
+    font-size: 30px;
+    width: 100%;
+    height: 100%;
+}
+
+.user-journey {
+    padding-left: 10px;
+}
+
+.div-center {
+    background-color: black;
+    width: 920px;
+    height: 720px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 40px;
+}
+
+.book-image {
+    background-color: var(--borders-color);
+    width: 319px;
+    height: 480px;
+    border-radius: 3px;
+    border: 3px solid var(--borders-color);
+}
+
+.book-image img { 
+    height: 100%;
+    width: 100%; 
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.book-infos {
+    background-color: var(--bg-color);
+    border: 3px solid var(--borders-color);
+    width: 475px;
+    height: 480px;
+    margin-left: 40px;
+    padding-left: 3%;
+    padding-right: 3%;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+.book-infos h1 {
+    margin-bottom: 0;
+}
+
+.book-infos h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: rgb(101, 101, 101);
+}
+
+/* Chrome, Edge, and Safari */
+.book-infos::-webkit-scrollbar {
+    width: 16px;
+}
+
+.book-infos::-webkit-scrollbar-track {
+    background: var(--bg-color);
+    margin: 10px;
+}
+
+.book-infos::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    border: 3px solid var(--bg-color);
+}
+
+#more {
+    display: none;
+}
+
+.book-buy {
+    transition: all ease-in-out 0.2s;
+
+    color: var(--bg-color);
+    text-align: center;
+    margin-top: 40px;
+    height: 120px;
+    width: 319px;
+    font-size: 30px;
+}
+
+.book-buy-button{
+    height: 60%;
+    width: 100%;
+}
+
+.book-buy-button:hover button{
+    transition: all ease-in-out 0.4s;
+    opacity: 1;
+    box-shadow: 0px 0px 30px var(--bg-color);
+    cursor: pointer;
+  
+}
+
+.book-buy h2 {
+    margin: 10px;
+}
+
+.book-genres {
+    border: dotted var(--borders-color);
+    border-radius: 10px;
+    color: var(--bg-color);
+    width: 475px;
+    height: 120px;
+    margin-left: 40px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: flex-start;
+}
+
+.book-genres h3 {
+    width: 475px;
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    height: min-content;
+    font-size: 30px;
+}
+
+.genre-bubble {
+    background-color: var(--primary-color);
+    height: 20px;
+    border-radius: 5px;
+    margin: 0px 5px 5px 5px;
+}
+
+.genre-bubble p{
+    margin: 1px 0px 0px 0px;
+    text-align: center;
+}
