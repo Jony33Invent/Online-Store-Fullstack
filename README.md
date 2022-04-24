@@ -25,6 +25,8 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 -	(funcionalidade) Avaliação: a loja possui um sistema de avaliação, os clientes podendo dar estrelas para os livros e cada livro exibindo a média de estrelas que recebeu.
 -	(mockups)
 	- Mockup do website: https://www.figma.com/file/0fDviLw7DFfuNuaV6tuUFc/Site-Mockup?node-id=0%3A1;
+		- https://www.figma.com/proto/0fDviLw7DFfuNuaV6tuUFc/Site-Mockup?node-id=2%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2
+
 	- Diagrama do website: https://www.figma.com/file/BkgTeQdphSKPElJ3EERYWc/Diagrama?node-id=0%3A1;
 	- HTML/CSS: estão no repositório;
 -	(informação salva) Serão salvos todos os dados dos administradores (name, id, address, phone, email), clientes (name, id, phone, email)  e livros (name, id, photo, author, description, price, genres, quantity_in_stock, quantity_sold, stars_rate).
