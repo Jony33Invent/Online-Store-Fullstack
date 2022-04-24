@@ -15,7 +15,6 @@ Pedro Raymundi - N° 11795634:
 -   Os dados do cliente são: name, id, address, phone, email
 -   Os dados de um livro são: name, id, photo, author, description, price, quantity_in_stock, quantity_sold, stars_rate.
 - Vendendo livros: Os livros são selecionados, é escolhida uma quantidade, e eles são incluídos no carrinho. Livros são comprados usando um número de cartão de crédito (qualquer numero é aceito pelo sistema). A quantidade de um produto vendido é subtraída da quantidade no estoque (quantity_in_stock) e adicionada na quantidade vendida (quantity_sold). Carrinhos só são esvaziados com o pagamento ou pelos clientes. 
-- Avaliação: a loja possui um sistema de avaliação, os clientes podendo dar estrelas para os livros e cada livro exibindo a média de estrelas que recebeu.
 
 # Project Description
 
@@ -23,12 +22,18 @@ Pedro Raymundi - N° 11795634:
 Existe um botão "user" que permite ao usuário acessar as telas para entrar com uma conta existente, ou registrar no site. E também uma barra de pesquisa que permite ao cliente pesquisar por um livro do estoque.
 -	Possui uma página que exibe os livros de uma determinada categoria (genero literário) disponivel no site. E uma página com as informações de um livro selecionado e a opção para comprá-lo (adicionar ao carrinho). A ideia é que o carrinho apareça como um overlay no canto superior direito da tela.
 -	Com uma conta de admistrador, se tem acesso à uma página que permite gerenciar os livros no estoque e também à uma de gerenciamento dos usuários no site. 
+-	(funcionalidade) Avaliação: a loja possui um sistema de avaliação, os clientes podendo dar estrelas para os livros e cada livro exibindo a média de estrelas que recebeu.
+-	(mockups)
+	- Mockup do website: https://www.figma.com/file/0fDviLw7DFfuNuaV6tuUFc/Site-Mockup?node-id=0%3A1;
+	- Diagrama do website: https://www.figma.com/file/BkgTeQdphSKPElJ3EERYWc/Diagrama?node-id=0%3A1;
+	- HTML/CSS: estão no repositório;
+-	(informação salva) Serão salvos todos os dados de usuários (name, id, address, phone, email) e livros (name, id, photo, author, description, price, quantity_in_stock, quantity_sold, stars_rate).
 
 ![alt text](Mockup_Homepage/img/diagrama.JPG)
 
 
 # Comments About the Code
-Any comment you may want to add to help understand your code. This is good programming practice.
+Nenhum.
 
 # Test Plan
 Não se aplica.
@@ -40,7 +45,7 @@ Não se aplica.
 Para a primeira milestone é apenas necessário ter um browser para rodar os mockups.
 
 # Problems
-List any major problems you had.
+Nenhum.
     
 # Comments
-Any comments you wish to add.
+Nenhum.
