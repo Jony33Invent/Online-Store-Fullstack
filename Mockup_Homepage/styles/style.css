@@ -269,6 +269,9 @@ form.search-bar{
   background-color: #717171;
 }
 
+.social:hover i{
+  color: lightgrey;
+}
 /* Fading animation */
 .fade {
   animation-name: fade;
