@@ -19,10 +19,10 @@ Pedro Raymundi - N° 11795634:
 
 # Project Description
 
-O sistema possui uma homepage que exibe promoções, destaques da loja, alguns livros mais populares e de alguma categoria dentre as existentes no site.
+-	O sistema possui uma homepage que exibe promoções, destaques da loja, alguns livros mais populares e de alguma categoria dentre as existentes no site.
 Existe um botão "user" que permite ao usuário acessar as telas para entrar com uma conta existente, ou registrar no site. E também uma barra de pesquisa que permite ao cliente pesquisar por um livro do estoque.
-Possui uma página que exibe os livros de uma determinada categoria (genero literário) disponivel no site. E uma página com as informações de um livro selecionado e a opção para comprá-lo (adicionar ao carrinho). A ideia é que o carrinho apareça como um overlay no canto superior direito da tela.
-Com uma conta de admistrador, se tem acesso à uma página que permite gerenciar os livros no estoque e também à uma de gerenciamento dos usuários no site. 
+-	Possui uma página que exibe os livros de uma determinada categoria (genero literário) disponivel no site. E uma página com as informações de um livro selecionado e a opção para comprá-lo (adicionar ao carrinho). A ideia é que o carrinho apareça como um overlay no canto superior direito da tela.
+-	Com uma conta de admistrador, se tem acesso à uma página que permite gerenciar os livros no estoque e também à uma de gerenciamento dos usuários no site. 
 
 ![alt text](Mockup_Homepage/img/diagrama.JPG)
 
