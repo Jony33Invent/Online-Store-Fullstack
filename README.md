@@ -2,7 +2,7 @@
 ## Book Store
 Made by:
 Jônatas Alves Lopes - N°: 11796552
-Pedro Raymundi - N°: 
+Pedro Raymundi - N° 11795634: 
 
 
 # Requirements
