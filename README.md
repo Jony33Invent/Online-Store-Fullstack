@@ -27,7 +27,7 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 	- Mockup do website: https://www.figma.com/file/0fDviLw7DFfuNuaV6tuUFc/Site-Mockup?node-id=0%3A1;
 	- Diagrama do website: https://www.figma.com/file/BkgTeQdphSKPElJ3EERYWc/Diagrama?node-id=0%3A1;
 	- HTML/CSS: estão no repositório;
--	(informação salva) Serão salvos todos os dados de usuários (name, id, address, phone, email) e livros (name, id, photo, author, description, price, quantity_in_stock, quantity_sold, stars_rate).
+-	(informação salva) Serão salvos todos os dados dos administradores (name, id, address, phone, email), clientes (name, id, phone, email)  e livros (name, id, photo, author, description, price, quantity_in_stock, quantity_sold, stars_rate).
 
 ![alt text](Mockup_Homepage/img/diagrama.JPG)
 
