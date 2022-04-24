@@ -1,8 +1,9 @@
-# Project Report
-## Book Store
+# Project Report - Book Store
+
+![alt text](Mockup_Homepage/img/logo.png)
 Made by:<br/>
-Jônatas Alves Lopes - N°: 11796552<br/>
-Pedro Raymundi - N°: 11795634 
+-	Jônatas Alves Lopes - N°: 11796552<br/>
+-	Pedro Raymundi - N°: 11795634 
 
 
 # Requirements
