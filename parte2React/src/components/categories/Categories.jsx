@@ -3,6 +3,30 @@ import '.././styles/style.css';
 import '.././styles/category.css';
 import {books} from '../BookData';
 import ProductCard from '../home/ProductCard';
+import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+
+function BkColor(category) {
+    switch (category) {
+        case 'Art':
+            return "#F6BB42";
+        case 'Phylosophy':
+            return "#8CC152";    
+        case 'Adventure':
+            return "#E9573F";
+        case 'Horror':
+            return "black";
+        case 'Romance':
+            return "#F7729E";
+        case 'Sci-Fi':
+            return "#00B1E1";
+        case 'Fantasy':
+            return "#37BC9B";
+        case 'Drama':
+            return "#B36DED";
+        default:
+            return "black";
+    } 
+}
 
 function Categories({category}) {
 
@@ -33,13 +57,13 @@ function Categories({category}) {
                     </div>
                     <div>
                         <ul class="user-journey">
-                            <li class="journey-item">Home</li>
+                            <Link to="/"><li class="journey-item">Home</li></Link>
                             <li><i class="fa-solid fa-angle-right"></i></li>
                             <li class="journey-item">Genres</li>
                             <li><i class="fa-solid fa-angle-right"></i></li>
-                            <li class="journey-item">Fantasy</li>
+                            <li class="journey-item">{category}</li>
                         </ul>
-                        <div class="section category" id="category-div">
+                        <div class="section category" id="category-div" style={{backgroundColor: BkColor(category)}}>
                             {productCards}
                         </div>
                     </div>
