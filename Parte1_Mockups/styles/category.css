@@ -1,4 +1,7 @@
+:root{
 
+  --category-color: #621940;
+}
 .title-div{
   display: flex;
   justify-content: center;
@@ -41,7 +44,7 @@
   flex-flow: row wrap;
   justify-content: center;
   text-align: center;
-  background-color: #101010;
+  background-color:var(--category-color);
   color: #EFEFEF;
 }
 .category div .product-card{
@@ -185,8 +188,12 @@
   height: 250px;
   margin: 0 0 0 0;
   font-size: 40px;
-  background-image: url(../img/fantasy.png);
+  color: white;
+}
+.title-div{
+  background-image:linear-gradient(var(--category-color),var(--category-color)),url(../img/fantasy.png);
+  background-blend-mode: hue;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+
 }

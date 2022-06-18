@@ -2,7 +2,11 @@ import React from "react";
 import NavHeader from "./NavHeader"
 import './styles/style.css';
 import './styles/dropdown.css';
+import Cart from "./Cart"
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+import {cartData} from './BookData';
+
+
 
 function Header() {
     return (
@@ -24,6 +28,7 @@ function Header() {
                     </a>
                     <a class="icon-circle" href="">
                         <i class="icon-link fa-solid fa-cart-shopping"></i>
+                        <Cart/>
                     </a>
                 </div>
             </div>

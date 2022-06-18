@@ -3,9 +3,21 @@ import '.././styles/style.css';
 import '.././styles/category.css';
 import {books} from '../BookData';
 import ProductCard from '../home/ProductCard';
+import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
-function Categories({category}) {
+const colors=["#4e8098","#0b5351","#00a9a5","#092327","#121025","#90c2e7","#3f32a6","#262051","#605d90","#a29fdb"];
 
+function BkColor(id) {
+    if(id<0 || id>=colors.length)
+        return 'black';
+    return colors[id];
+}
+
+const r = document.querySelector(':root');
+function Categories({category,index}) {
+const bkColor=BkColor(index);
+ r.style.setProperty('--category-color', bkColor);
+ r.style.setProperty('--category-section-color', bkColor+"DC");
     let productCards = []
     let n=books.length;
     for (let i = 0; i < 20; i++) {
@@ -33,11 +45,11 @@ function Categories({category}) {
                     </div>
                     <div>
                         <ul class="user-journey">
-                            <li class="journey-item">Home</li>
+                            <Link to="/"><li class="journey-item">Home</li></Link>
                             <li><i class="fa-solid fa-angle-right"></i></li>
                             <li class="journey-item">Genres</li>
                             <li><i class="fa-solid fa-angle-right"></i></li>
-                            <li class="journey-item">Fantasy</li>
+                            <li class="journey-item">{category}</li>
                         </ul>
                         <div class="section category" id="category-div">
                             {productCards}

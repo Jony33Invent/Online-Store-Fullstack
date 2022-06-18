@@ -1,4 +1,8 @@
 
+:root {
+  --category-color: #1e90ff;
+  --category-section-color: #1e90ff;
+}
 .title-div{
   display: flex;
   justify-content: center;
@@ -27,11 +31,12 @@
   font-size: 12px;
 }
 .section.category{
-  width: 95%;
+  width: 97%;
   padding-bottom: 20px;
   opacity: 0.9;
-  margin-left: 30px;
-  margin-right: 30px;
+  border-radius: 5px;
+  margin-left: 20px;
+  margin-right: 40px;
   margin-top: 20px;
   padding-top: 30px;
   padding-bottom: 50px;
@@ -41,8 +46,8 @@
   flex-flow: row wrap;
   justify-content: center;
   text-align: center;
-  background-color: #101010;
   color: #EFEFEF;
+  background-color: var(--category-section-color);
 }
 .category div .product-card{
   width: 230px;
@@ -185,7 +190,8 @@
   height: 250px;
   margin: 0 0 0 0;
   font-size: 40px;
-  background-image: url(../../img/fantasy.png);
+  background-image:linear-gradient(var(--category-color),var(--category-color)),url(../../img/fantasy.png);  
+  background-blend-mode: hue;
   background-position: center;
   background-repeat: no-repeat;
   color: white;

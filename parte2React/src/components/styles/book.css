@@ -69,7 +69,6 @@
 }
 
 .book-infos p{
-    text-align: left;
 }
 /* Chrome, Edge, and Safari */
 .book-infos::-webkit-scrollbar {
@@ -149,6 +148,7 @@ background-color: #8AADE2;
     height: 20px;
     border-radius: 5px;
     margin: 0px 5px 5px 5px;
+    width: 120px;
 }
 
 .genre-bubble p{
