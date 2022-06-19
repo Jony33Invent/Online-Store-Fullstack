@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import '.././styles/style.css';
 import '.././styles/login.css';
-import { useNavigate,Link} from "react-router-dom";
+import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
 function Login() {
-    const navigate = useNavigate()
 
     const [values, setValues] = useState({
         email: "",
@@ -29,11 +28,10 @@ function Login() {
         if (values.email && values.password) {
             setFilledData(true);
         }
-        if(values.email && values.password && values.email === localStorage.getItem(values.email) && values.password === localStorage.getItem(values.email + 'password')) {
+        if(filledData && values.email === localStorage.getItem(values.email) && values.password === localStorage.getItem(values.email + 'password')) {
             setLogged(true);
-            localStorage.setItem("user", values.email);
-            navigate('/')
             window.location.reload(false)
+            localStorage.setItem("user", values.email);
         }
     }
 

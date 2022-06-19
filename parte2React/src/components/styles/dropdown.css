@@ -43,7 +43,12 @@ li {
 }
 
 .dropdown-content a:hover {
-  background-color: black;
+  background-color: #202020;
+  font-size: 16px;
+  transition: all ease-in-out 0.2s;
+}
+.dropdown-content a:active {
+  background-color: gray;
   font-size: 16px;
   transition: all ease-in-out 0.2s;
 }

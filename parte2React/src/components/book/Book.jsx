@@ -3,6 +3,8 @@ import '.././styles/style.css';
 import '.././styles/book.css';
 import { useLocation } from "react-router-dom";
 import {cartData} from '../BookData';
+import SectionBox from '../home/./SectionBox';
+import {books} from '../BookData';
 
 
 let readingMore=false;
@@ -13,12 +15,19 @@ function addToCart(id){
 	cart.push(id);
 	localStorage.setItem('cart', JSON.stringify(cart));
     window.location.reload(false)
+    window.scrollTo(0, 0);
 }
+    const related={
+        "title":"Livros Relacionados",
+        "text":"",
+        "products":books.slice(4),
+        "class":"section box related"
+    };
 function Book() {
 const {state} = useLocation();
 const book= state; // Read values passed on state
 	return(
-	<div class="div-center">
+	<><div class="div-center">
 		<div style={{display: 'flex'}}>
 			<div class="book-image">
 				<img id="hunger-games" src={book.img}></img>
@@ -64,6 +73,9 @@ const book= state; // Read values passed on state
 			</div>
 		</div>
     </div>
+
+        <SectionBox section={related}></SectionBox>
+        </>
 	)
 }
 export default Book
