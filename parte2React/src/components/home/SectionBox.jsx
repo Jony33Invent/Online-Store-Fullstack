@@ -8,7 +8,7 @@ function SectionBox({section}) {
       productCards.push(<ProductCard product={section.products[i]}/>)
     }   
     return (
-        <div class="section box">
+        <div class={section.class}>
             <div>
             <h2>{section.title}</h2>
             <p>{section.text}</p>

@@ -7,9 +7,12 @@ import {cartData} from '../BookData';
 
 let readingMore=false;
 function addToCart(id){
-	cartData.empty=false;
-	cartData.itens.push(id);
-	
+	let cart = JSON.parse(localStorage.getItem('cart'));
+	if(cart==null)
+		cart=[];
+	cart.push(id);
+	localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.reload(false)
 }
 function Book() {
 const {state} = useLocation();

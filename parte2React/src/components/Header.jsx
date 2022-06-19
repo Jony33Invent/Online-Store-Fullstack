@@ -10,7 +10,7 @@ function Header() {
 
     function onMouseEnter(event) {
         user = localStorage.getItem("user")
-        console.log(user)
+        console.log(user);
     }
 
     return (
@@ -27,10 +27,10 @@ function Header() {
                     </form>
                 </div>
                 <div class="inline header-right" onMouseOver={onMouseEnter}>
-                    <a class="icon-circle" href="">
-                        <Link to={ user ? "/home/account/settings" : "/home/account/login"}><i class={ user ? "icon-link fa-solid fa-smile" : "icon-link fa-solid fa-user"}></i></Link>
-                    </a>
-                    <a class="icon-circle" href="">
+                    <Link class="icon-circle"to={ user ? "/home/account/settings" : "/home/account/login"}>
+                        <i class={ user ? "icon-link fa-solid fa-smile" : "icon-link fa-solid fa-user"}></i>
+                    </Link>
+                    <a class="icon-circle">
                         <i class="icon-link fa-solid fa-cart-shopping"></i>
                         <Cart/>
                     </a>

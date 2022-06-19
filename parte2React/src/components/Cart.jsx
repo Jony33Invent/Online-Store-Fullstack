@@ -14,10 +14,13 @@ function onMouseEnter(event) {
 }
 
 function Cart() {
+	let cart = JSON.parse(localStorage.getItem('cart'));
+	if(cart==null)
+		cart=[];
 	cartItens=[];
-	cart=cartData;
-	cart.itens.forEach(i=>{cartItens.push(<CartItem item={books[i]}/>)});
-	if(cart.empty){
+	cart.forEach((id,i)=>{cartItens.push(<CartItem item={books[id]} index={i}/>)});
+
+	if(!cart.length){
 		return(
 				<div class="cart-container" onMouseOver={onMouseEnter} >
 					<div class="cart-logo"><i class="fa-solid fa-cart-arrow-down"></i>
@@ -31,8 +34,9 @@ function Cart() {
 			<div class="cart-container" onMouseOver={onMouseEnter}>
 				<div class="cart-col">
 					{cartItens}
-					<Link to={ user ? "/" : "/home/account/login"}><div class="cart-btn">Finalizar Compra</div></Link>
 				</div>
+				<Link to={ user ? "/" : "/home/account/login"}><div class="cart-btn">Finalizar Compra</div></Link>
+				
 			</div>
 		)
 	}

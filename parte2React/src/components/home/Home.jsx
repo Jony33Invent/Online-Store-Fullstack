@@ -7,13 +7,15 @@ import {books} from '../BookData';
     const populares={
         "title":"Mais Populares",
         "text":"Clique para ver mais...",
-        "products":books.slice(1,5)
+        "products":books.slice(0,4),
+        "class":"section box"
     };
 
     const terror={
         "title":"Clássicos do Terror",
         "text":"Clique para ver mais...",
-        "products":books.slice(0,4)
+        "products":books.slice(4),
+        "class":"section box horror"
     };
 function Home() {
 
