@@ -110,13 +110,7 @@ a.icon-circle{
   cursor: pointer;
 
 }
-/*
-.product-card:active{
-  transition: all ease-in-out 0.1s;
-  background-color: #101010;
-  color: white;
 
-}*/
 .product-card:not(:hover){
   animation-name: changeColor;
   animation-direction: reverse;

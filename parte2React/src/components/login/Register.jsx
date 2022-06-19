@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import '.././styles/style.css';
 import '.././styles/login.css';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 function Login() {
+    const navigate = useNavigate()
 
     const [values, setValues] = useState({
         name: "",
@@ -35,7 +36,10 @@ function Login() {
             localStorage.setItem(values.email, values.email);
             localStorage.setItem(values.email + 'adress', values.adress);
             localStorage.setItem(values.email + 'password', values.password);
+            localStorage.setItem("user", values.email);
             setFilledData(true);
+            navigate('/')
+            window.location.reload(false)
         }
     }
 
