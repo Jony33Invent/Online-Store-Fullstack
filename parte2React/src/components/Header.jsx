@@ -4,11 +4,15 @@ import './styles/style.css';
 import './styles/dropdown.css';
 import Cart from "./Cart"
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
-import {cartData} from './BookData';
-
-
 
 function Header() {
+    let user = localStorage.getItem("user")
+
+    function onMouseEnter(event) {
+        user = localStorage.getItem("user")
+        console.log(user)
+    }
+
     return (
         <div>
             <div class="div-block">
@@ -22,9 +26,9 @@ function Header() {
                         <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <div class="inline header-right">
+                <div class="inline header-right" onMouseOver={onMouseEnter}>
                     <a class="icon-circle" href="">
-                        <Link to="/home/login"><i class="icon-link fa-solid fa-user"></i></Link>
+                        <Link to={ user ? "/home/account/settings" : "/home/account/login"}><i class={ user ? "icon-link fa-solid fa-smile" : "icon-link fa-solid fa-user"}></i></Link>
                     </a>
                     <a class="icon-circle" href="">
                         <i class="icon-link fa-solid fa-cart-shopping"></i>

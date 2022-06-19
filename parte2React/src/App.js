@@ -5,6 +5,7 @@ import Login from './components/login/Login';
 import Register from './components/login/Register';
 import './App.css';
 import Categories from './components/categories/Categories';
+import ClientSettings from './components/client/ClientSettings';
 import Book from './components/book/Book';
 import {
   BrowserRouter,
@@ -31,8 +32,9 @@ function App() {
             <Route path="/categories/sci-fi" element={<Categories category="Sci-Fi" index={5}/>}></Route>
             <Route path="/categories/fantasy" element={<Categories category="Fantasy" index={6}/>}></Route>
             <Route path="/categories/drama" element={<Categories category="Drama" index={7}/>}></Route>
-            <Route path="/home/login" element={<Login />}></Route>
-            <Route path="/home/register" element={<Register />}></Route>
+            <Route path="/home/account/login" element={<Login />}></Route>
+            <Route path="/home/account/register" element={<Register />}></Route>
+            <Route path="/home/account/settings" element={<ClientSettings />}></Route>
           </Routes>
         <Footer />
       </BrowserRouter>

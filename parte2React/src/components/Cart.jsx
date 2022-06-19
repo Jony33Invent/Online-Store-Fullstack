@@ -11,14 +11,9 @@ let user = localStorage.getItem("user");
 
 function onMouseEnter(event) {
 	user = localStorage.getItem("user")
-	console.log(user);
 }
 
 function Cart() {
-	
-
-	console.log(user);
-
 	cartItens=[];
 	cart=cartData;
 	cart.itens.forEach(i=>{cartItens.push(<CartItem item={books[i]}/>)});
@@ -36,7 +31,7 @@ function Cart() {
 			<div class="cart-container" onMouseOver={onMouseEnter}>
 				<div class="cart-col">
 					{cartItens}
-					<Link to={ user = localStorage.getItem("user") ? "/" : "/home/login"}><div class="cart-btn">Finalizar Compra</div></Link>
+					<Link to={ user ? "/" : "/home/account/login"}><div class="cart-btn">Finalizar Compra</div></Link>
 				</div>
 			</div>
 		)
