@@ -4,7 +4,8 @@ import React from "react";
 let navigate;
 
 function clickedCard(book){
-    navigate('/book', { state:book });
+    navigate('/book', { state:book });  
+    window.scrollTo(0, 100);
 
 }
 
