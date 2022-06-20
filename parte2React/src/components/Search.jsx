@@ -9,17 +9,17 @@ import ProductCard from './home/./ProductCard';
 
 const r = document.querySelector(':root');
 function Search() {
-const {state} = useLocation();
-const search=state;                          
-const itens=Data.filter(item => {
+    const {state} = useLocation();
+    const search=state;                          
+    const itens=Data.filter(item => {
         if(search === ""){
             return item;
         }
         else if(item.name.toLowerCase().includes(search.toLowerCase())){return item}
     }).map((item) => ( <div><ProductCard product={item}/></div>));
 
- r.style.setProperty('--category-color', "#101010");
- r.style.setProperty('--category-section-color', "#101010DC");
+    r.style.setProperty('--category-color', "#101010");
+    r.style.setProperty('--category-section-color', "#101010DC");
     return (
             <>
 
