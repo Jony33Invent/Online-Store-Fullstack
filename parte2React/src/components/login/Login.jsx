@@ -31,9 +31,16 @@ function Login() {
         }
         if(values.email && values.password && values.email === localStorage.getItem(values.email) && values.password === localStorage.getItem(values.email + 'password')) {
             setLogged(true);
+
             localStorage.setItem("user", values.email);
-            navigate('/')
-            window.location.reload(false)
+            if(values.email=="admin@email.com"){
+                localStorage.setItem("admin",1);
+                navigate('/admin')
+                window.location.reload(false)
+            }else{
+                navigate('/')
+                window.location.reload(false)
+            }
         }
     }
 

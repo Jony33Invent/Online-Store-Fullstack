@@ -13,7 +13,7 @@
   --product-card-font: black;
   --product-card-hover-font: black;
 
-  --section-box-bg: #4283E5;
+  --section-box-bg: #00a9a5DC;
   --section-horror-bg: black;
   --section-box-font: #f0f0f0;
 
@@ -184,8 +184,8 @@ display: flex;
   }
 
   form.search-bar .search-btn {
-    height: 32px;
-    width: 32px;
+    height: 30px;
+    width: 30px;
     border-radius: 4px;
     background: var(--primary-color);
     color: white;
@@ -193,13 +193,20 @@ display: flex;
     border-left: none;
     cursor: pointer;
     vertical-align: middle;
-    padding: 7px;
+    padding: 5px;
+    margin-left: 10px;
+  transition: background-color 0.6s ease;
   }
 
   form.search-bar .search-btn:hover {
     background: var(--primary-hover-color);
+  transition: background-color 0.6s ease;
   }
 
+  form.search-bar .search-btn:active {
+    background: lightgrey;
+  transition: background-color 0.6s ease;
+  }
   form.search-bar::after {
     content: "";
     clear: both;

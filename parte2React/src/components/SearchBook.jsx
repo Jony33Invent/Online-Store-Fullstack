@@ -2,11 +2,19 @@ import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import './styles/style.css';
 import './styles/dropdown.css';
-let navigate;
+import Data from './BookData';
+import Search from './Search';
 
+let navigate;
+function clickedItem(book,set){
+    navigate('/book', { state:book });  
+    window.scrollTo(0, 100);
+    set("");
+
+}
 
 function searchButton(search,set){
-    if(search!==""){
+    if(search!=""){
         navigate('/search?key='+search, { state:search });  
         window.scrollTo(0, 100);
         set("");

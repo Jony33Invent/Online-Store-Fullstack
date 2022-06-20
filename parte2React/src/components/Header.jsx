@@ -1,19 +1,26 @@
 import React from "react";
 import NavHeader from "./NavHeader"
+import AdminNav from "./admin/AdminNav"
 import './styles/style.css';
 import './styles/dropdown.css';
-import Cart from "./Cart"
-import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+import Cart from "./Cart";
+
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+} from "react-router-dom";
 import SearchBook from "./SearchBook";
 
 function Header() {
-    let user = localStorage.getItem("user")
+    let user = localStorage.getItem("user");
+    let admin = localStorage.getItem("admin");
 
     function onMouseEnter(event) {
-        user = localStorage.getItem("user")
-        console.log(user);
+        user = localStorage.getItem("user");
     }
-
+    let nav=(admin==true)?<><AdminNav/></>:<NavHeader/>;
     return (
         <div>
             <div class="div-block">
@@ -34,7 +41,6 @@ function Header() {
                     </a>
                 </div>
             </div>
-            <NavHeader />
         </div>
     )
 }

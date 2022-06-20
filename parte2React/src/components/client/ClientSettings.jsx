@@ -16,6 +16,7 @@ function ClientSettings() {
         event.preventDefault();
         localStorage.removeItem("user")
         navigate('/')
+        localStorage.setItem("admin",0);
         window.location.reload(false)
     }
     const handleDelete = (event) => {
@@ -26,6 +27,7 @@ function ClientSettings() {
         localStorage.removeItem(localStorage.getItem("user"))
         localStorage.removeItem("user")
         navigate('/')
+        localStorage.setItem("admin",0);
         window.location.reload(false)
     }
 

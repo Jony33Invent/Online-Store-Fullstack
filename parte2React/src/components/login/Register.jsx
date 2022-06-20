@@ -38,8 +38,14 @@ function Login() {
             localStorage.setItem(values.email + 'password', values.password);
             localStorage.setItem("user", values.email);
             setFilledData(true);
-            navigate('/')
-            window.location.reload(false)
+            if(values.email=="admin@email.com"){
+                localStorage.setItem("admin",1);
+                navigate('/admin')
+                window.location.reload(false)
+            }else{
+                navigate('/')
+                window.location.reload(false)
+            }
         }
     }
 
