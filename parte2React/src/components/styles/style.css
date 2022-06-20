@@ -300,3 +300,9 @@ display: flex;
 #logo-img{
   width: 200px;
 }
+
+.preview-img{
+  height: 430px;
+  width: 100%;
+  margin-bottom: 70px;
+}

@@ -195,4 +195,12 @@
   background-position: center;
   background-repeat: no-repeat;
   color: white;
+  animation-name: spaceLetters;
+  animation-duration: 1.5s;
+}
+
+@keyframes spaceLetters {
+  0%   {letter-spacing: 2px;}
+  50%  {letter-spacing: 40px;}
+  100% {letter-spacing: 4px;}
 }

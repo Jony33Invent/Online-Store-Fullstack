@@ -15,7 +15,7 @@ function clickedItem(book,set){
 
 function searchButton(search,set){
     if(search!=""){
-        navigate('/search', { state:search });  
+        navigate('/search?key='+search, { state:search });  
         window.scrollTo(0, 100);
         set("");
     }
@@ -36,7 +36,7 @@ function SearchBook() {
                 }}></input>
                 <div class="search-btn" onClick={()=>searchButton(list,setList)}><i class="fa fa-search"></i></div>
             </form>
-
+            {/*
             <div className="main" style={{display:(list==="")?"none":"flex"}}>
                 {Data.filter(item => {
                     if(list === ""){
@@ -47,12 +47,12 @@ function SearchBook() {
                 }).map((item) => (
                 
                     <div key={item.id}>
-                    <ul className="lista" onClick={() => clickedItem(item,setList)}>
+                    <ul className="lista" onClick={() => searchButton(item.name,setList)}>
                         <li className="item_lista">{item.name}</li>
                     </ul>
                     </div>
                 ))}
-            </div>
+            </div>*/}
         </div>
     )
 }

@@ -5,7 +5,7 @@ import {books} from '../BookData';
 import ProductCard from '../home/ProductCard';
 import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 
-const colors=["#4e8098","#0b5351","#00a9a5","#092327","#121025","#90c2e7","#3f32a6","#262051","#605d90","#a29fdb"];
+const colors=["#0b5351","#00a9a5","#101010","#121025","#90c2e7","#3f32a6","#262051","#4e8098","#a29fdb"];
 
 function BkColor(id) {
     if(id<0 || id>=colors.length)
@@ -26,7 +26,7 @@ const bkColor=BkColor(index);
     return (
             <>
             <div class="title-div">
-                <h1 class="category-title">
+                <h1 class="category-title"  key={category}>
                     {category}
                 </h1>
             </div>
@@ -34,7 +34,6 @@ const bkColor=BkColor(index);
                 <div class="category-main">
                     <div class="categories-column">
                         <div class="column-title" > More Genres</div>
-                        <div class="btn-category" > <a href="#">Art</a></div>
                         <div class="btn-category" > <a href="#">Phylosophy</a></div>
                         <div class="btn-category" > <a href="#">Adventure</a></div>
                         <div class="btn-category" > <a href="#">Horror</a></div>

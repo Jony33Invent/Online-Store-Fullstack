@@ -21,7 +21,7 @@ function Home() {
 
     return (
         <div>
-            <img src={require("../../img/img1.png")} alt="homepage figure" height='500px'></img>
+            <img src={require("../../img/img1.png")} class="preview-img" alt="homepage figure"></img>
             <SectionBox section={populares}></SectionBox>
             <SectionBox section={terror}></SectionBox>
         </div>
