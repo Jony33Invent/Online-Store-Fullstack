@@ -52,3 +52,21 @@ li {
   font-size: 16px;
   transition: all ease-in-out 0.2s;
 }
+
+.item_lista{
+  color: white;
+}
+.main{
+  flex-direction: column;
+  z-index: 10;
+  position: absolute;
+  width: 400px;
+}
+.lista{
+  padding: 2px;
+}
+
+.lista:hover{
+  background-color: grey;
+  cursor: pointer;
+}

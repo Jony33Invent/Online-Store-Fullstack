@@ -171,7 +171,7 @@ a.icon-circle{
 }
 /* Form */
 form.search-bar{
-
+display: flex;
 }
   form.search-bar input[type=text] {
     font-size: 14px;
@@ -183,17 +183,20 @@ form.search-bar{
     border-radius: 4px;
   }
 
-  form.search-bar button {
+  form.search-bar .search-btn {
     height: 32px;
+    width: 32px;
     border-radius: 4px;
     background: var(--primary-color);
     color: white;
     font-size: 17px;
     border-left: none;
     cursor: pointer;
+    vertical-align: middle;
+    padding: 7px;
   }
 
-  form.search-bar button:hover {
+  form.search-bar .search-btn:hover {
     background: var(--primary-hover-color);
   }
 

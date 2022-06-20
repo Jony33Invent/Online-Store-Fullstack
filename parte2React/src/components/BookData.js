@@ -77,3 +77,4 @@ export const books=[
 export let cartData={
   "itens":[0,2,2]
 };
+export default books;

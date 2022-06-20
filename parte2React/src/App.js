@@ -7,6 +7,7 @@ import './App.css';
 import Categories from './components/categories/Categories';
 import ClientSettings from './components/client/ClientSettings';
 import Book from './components/book/Book';
+import Search from './components/Search';
 import {
   BrowserRouter,
   Routes,
@@ -24,6 +25,7 @@ function App() {
 
             <Route path="/book" element={<Book/>}></Route>
             <Route path="/categories" element={<Categories category=""/>}></Route>
+            <Route path="/search" element={<Search/>}></Route>
             <Route path="/categories/art" element={<Categories category="Art" index={0}/>}></Route>
             <Route path="/categories/phylosophy" element={<Categories category="Phylosophy" index={1}/>}></Route>
             <Route path="/categories/adventure" element={<Categories category="Adventure" index={2}/>}></Route>
