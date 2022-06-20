@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 
 function ClientSettings() {
     const navigate = useNavigate()
+    //pega os valores do local storage para mostrar ao usuário
     const [values, setValues] = useState({
         name: localStorage.getItem(localStorage.getItem("user") + "name"),
         adress: localStorage.getItem(localStorage.getItem("user") + "adress"),
         email: localStorage.getItem(localStorage.getItem("user"))
     });
 
+    //resetando os tokens para quando o usuário sai da conta
     const handleExit = (event) => {
         event.preventDefault();
         localStorage.removeItem("user")

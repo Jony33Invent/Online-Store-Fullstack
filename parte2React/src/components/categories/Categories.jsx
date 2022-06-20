@@ -6,7 +6,7 @@ import '.././styles/category.css';
 import {books} from '../BookData';
 import ProductCard from '../home/ProductCard';
 
-
+//Cores do fundo de cada categoria
 const colors=["#0b5351","#00a9a5","#101010","#121025","#90c2e7","#3f32a6","#262051","#4e8098","#a29fdb"];
 
 function BkColor(id) {
@@ -23,6 +23,7 @@ function Categories({category,index}) {
 
     const [checked, setChecked] = useState({ az: false, za: false, lowprice: false, bigprice: false });
 
+    //Carrega os livros da categoria
     let location = useLocation();
     const bookList = books.filter(item => {
         if(category === ""){
@@ -32,11 +33,13 @@ function Categories({category,index}) {
     })
     const [itens, setItens] = useState(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
 
+    //Quando o usuário clica em outra categoria os settings resetam e os novos produtos são puxados
     useEffect(() => {
         setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
         setChecked({az: false, za: false, lowprice: false, bigprice: false})
      },[location]);
 
+    //Filtros por nome e preço (ta meio repetido, mas foi porque não deu tempo de deixar moduladinho e bonito)
     const azFilter = (event) => {
         bookList.sort(function (a, b) {
             if (a.name < b.name) {

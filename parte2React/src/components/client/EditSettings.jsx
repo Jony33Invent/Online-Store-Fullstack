@@ -5,6 +5,7 @@ import { useNavigate, Link } from 'react-router-dom';
 function Login() {
     const navigate = useNavigate()
 
+    //Pega o valor inicial do user no localStorage
     const [values, setValues] = useState({
         name: localStorage.getItem(localStorage.getItem("user") + "name"),
         adress: localStorage.getItem(localStorage.getItem("user") + "adress"),
@@ -28,6 +29,7 @@ function Login() {
         setValues({...values, password: event.target.value})
     }
 
+    //Edição dos settings do usuário
     const handleSubmit = (event) => {
         event.preventDefault();
         setFirstTry(false);
@@ -43,7 +45,7 @@ function Login() {
         }
     }
 
-    
+    //Deleta todos os dados do usuário + o seu email do banco de dados do adm (sequencial porque ta tudo csv no local Storage)
     const handleDelete = (event) => {
         var accountsArr = localStorage.getItem("users").split(',');
         let users = "null";

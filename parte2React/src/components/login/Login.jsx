@@ -29,9 +29,10 @@ function Login() {
         if (values.email && values.password) {
             setFilledData(true);
         }
+        //verificação do login sem criptografia nem nada pq n tem servidor mesmo
         if(values.email && values.password && values.email === localStorage.getItem(values.email) && values.password === localStorage.getItem(values.email + 'password')) {
             setLogged(true);
-
+            //se é admin ele vi ter um token a mais
             localStorage.setItem("user", values.email);
             if(values.email=="admin@email.com"){
                 localStorage.setItem("admin",1);
