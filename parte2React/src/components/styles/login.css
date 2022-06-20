@@ -49,6 +49,19 @@
 	transition: all ease-in-out 0.2s;
 }
 
+.login-btn-del{
+	background-color: rgb(252, 79, 79);
+	margin-top: 10px;
+	color: white;
+	height: 50px;
+	border: 0px;
+	border-radius: 20px;
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all ease-in-out 0.2s;
+}
+
 .login-input{
 	background-color: #E6E6E6;
 	color: #8A8A8A;

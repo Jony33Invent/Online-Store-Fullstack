@@ -60,15 +60,8 @@ function Login() {
                 <p class="login-base-param">Adress: <input class="login-input" type="text" onChange={handleAdress}></input></p>
                 <p class="login-base-param">E-mail: <input class="login-input" type="text" onChange={handleEmail}></input></p>
                 <p class="login-base-param">Password: <input class="login-input" type="password" onChange={handlePassword}></input></p>
-                <div class="row">
-                    <div>
-                        <p class="message1">Already have an account?</p>
-                        <Link to="/home/account/login">
-                            <input type="button" class="login-btn" name="" value="Login"></input>
-                        </Link>
-                    </div>
-                    <input type="submit" class="login-btn create-account-btn" name="" value="Create Account"></input>
-                </div>
+                <input type="submit" class="login-btn" name="" value="Create Account"></input>
+                <p>Already have an account <Link to="/home/account/login"><a href="" class="login-link">Login</a></Link></p>
             </form>
         </div>
     )

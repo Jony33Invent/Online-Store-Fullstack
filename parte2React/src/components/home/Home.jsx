@@ -11,10 +11,14 @@ import {books} from '../BookData';
         "class":"section box"
     };
 
+    const bookList = books.filter(item => {
+        if(item.genre.toLowerCase().includes("horror")){return item}
+    })
+
     const terror={
         "title":"Clássicos do Terror",
         "text":"Clique para ver mais...",
-        "products":books.slice(4),
+        "products":bookList,
         "class":"section box horror"
     };
 function Home() {
