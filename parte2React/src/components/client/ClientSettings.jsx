@@ -19,17 +19,6 @@ function ClientSettings() {
         localStorage.setItem("admin",0);
         window.location.reload(false)
     }
-    const handleDelete = (event) => {
-        event.preventDefault();
-        localStorage.removeItem(localStorage.getItem("user") + "password")
-        localStorage.removeItem(localStorage.getItem("user") + "adress")
-        localStorage.removeItem(localStorage.getItem("user") + "name")
-        localStorage.removeItem(localStorage.getItem("user"))
-        localStorage.removeItem("user")
-        navigate('/')
-        localStorage.setItem("admin",0);
-        window.location.reload(false)
-    }
 
 
     return (
@@ -41,8 +30,7 @@ function ClientSettings() {
                 <p class="login-base-param">Email: {values.email} </p>
             
                 <input type="submit" class="login-btn" name="" value="Exit account" onClick={handleExit}></input>
-                <input type="submit" class="login-btn" name="" value="Delete account" onClick={handleDelete}></input>
-                <Link to="/home/account/">
+                <Link to="/home/account/settings/edit">
                     <input type="button" class="login-btn" name="" value="Edit account"></input>
                 </Link>
             </form>

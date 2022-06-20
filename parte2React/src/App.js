@@ -7,6 +7,7 @@ import Register from './components/login/Register';
 import './App.css';
 import Categories from './components/categories/Categories';
 import ClientSettings from './components/client/ClientSettings';
+import EditSettings from './components/client/EditSettings';
 import Book from './components/book/Book';
 import Search from './components/Search';
 import Admin from './components/admin/Admin';
@@ -42,6 +43,7 @@ function App() {
             <Route path="/home/account/login" element={<><NavHeader/><Login /></>}></Route>
             <Route path="/home/account/register" element={<><NavHeader/><Register /></>}></Route>
             <Route path="/home/account/settings" element={<><NavHeader/><ClientSettings /></>}></Route>
+            <Route path="/home/account/settings/edit" element={<><NavHeader/><EditSettings /></>}></Route>
             <Route path="/admin" element={<><AdminNav/><Admin/></>}></Route>
             <Route path="/admin/users" element={<><AdminNav/><Users/></>}></Route>
           </Routes>

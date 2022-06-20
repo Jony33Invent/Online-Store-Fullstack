@@ -36,6 +36,7 @@ function Login() {
             localStorage.setItem(values.email, values.email);
             localStorage.setItem(values.email + 'adress', values.adress);
             localStorage.setItem(values.email + 'password', values.password);
+            localStorage.setItem("users", localStorage.getItem("users") + ',' + values.email)
             localStorage.setItem("user", values.email);
             setFilledData(true);
             if(values.email=="admin@email.com"){
