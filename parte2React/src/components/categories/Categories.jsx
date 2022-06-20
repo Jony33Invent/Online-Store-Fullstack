@@ -32,16 +32,26 @@ const bkColor=BkColor(index);
             </div>
 
                 <div class="category-main">
-                    <div class="categories-column">
-                        <div class="column-title" > More Genres</div>
-                        <div class="btn-category" > <a href="#">Phylosophy</a></div>
-                        <div class="btn-category" > <a href="#">Adventure</a></div>
-                        <div class="btn-category" > <a href="#">Horror</a></div>
-                        <div class="btn-category" > <a href="#">Romance</a></div>
-                        <div class="btn-category" > <a href="#">Sci-Fi</a></div>
-                        <div class="btn-category" > <a href="#">Fantasy</a></div>
-                        <div class="btn-category" > <a href="#">Drama</a></div>
-                    </div>
+                    <form class="categories-column">
+                        <div class="column-title" > Filter by</div>
+                        
+                        <label class="btn-category">
+                            <input type="radio" name="filter"></input> 
+                            A to Z
+                        </label>
+                        <label class="btn-category">
+                            <input type="radio" name="filter"></input> 
+                            Z to A
+                        </label>
+                        <label class="btn-category">
+                            <input type="radio" name="filter"></input> 
+                            Lowest Price
+                        </label>
+                        <label class="btn-category">
+                            <input type="radio" name="filter"></input> 
+                            Biggest Price
+                        </label>
+                    </form>
                     <div>
                         <ul class="user-journey">
                             <Link to="/"><li class="journey-item">Home</li></Link>
