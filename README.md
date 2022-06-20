@@ -52,6 +52,8 @@ A maior parte dos erros persistentes são devidos à falta de um servidor para q
 Baixe os arquivos da pasta parte2React, vá até o diretório e use npm install e, por fim, inicie-os com npm start.<br/>
 (talvez seja necessário usar o yarn para as rotas yarn add react-router-dom@6)
 
+Registre uma conta com o email "admin@email.com" para tre acesso à uma conta de admin
+
 # Problems
 Nenhum.
     
