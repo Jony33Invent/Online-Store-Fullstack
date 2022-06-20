@@ -21,7 +21,7 @@ function Categories({category,index}) {
     r.style.setProperty('--category-color', bkColor);
     r.style.setProperty('--category-section-color', bkColor+"DC");
 
-    const [checked, setChecked] = useState({ az: false, za: false/*, lowprice: false, bigprice: false */});
+    const [checked, setChecked] = useState({ az: false, za: false, lowprice: false, bigprice: false });
 
     let location = useLocation();
     const bookList = books.filter(item => {
@@ -40,8 +40,7 @@ function Categories({category,index}) {
         bookList.sort(function (a, b) {
             if (a.name < b.name) {
                 return -1;
-            }
-            if (b.name > a.name) {
+            } else {
                 return 1;
             }
             return 0;
@@ -51,6 +50,8 @@ function Categories({category,index}) {
             return {
                 az: true,
                 za: false,
+                lowprice: false,
+                bigprice: false
             };
             });
 
@@ -61,8 +62,7 @@ function Categories({category,index}) {
         bookList.sort(function (a, b) {
             if (a.name < b.name) {
                 return 1;
-            }
-            if (b.name > a.name) {
+            } else {
                 return -1;
             }
             return 0;
@@ -72,6 +72,52 @@ function Categories({category,index}) {
             return {
                 az: false,
                 za: true,
+                lowprice: false,
+                bigprice: false
+            };
+            });
+
+        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+    }
+
+    const lowPriceFilter = (event) => {
+        bookList.sort(function (a, b) {
+            if (a.price < b.price) {
+                return 1;
+            } else {
+                return -1;
+            }
+            return 0;
+        });
+
+        setChecked(() => {
+            return {
+                az: false,
+                za: false,
+                lowprice: true,
+                bigprice: false
+            };
+            });
+
+        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+    }
+
+    const bigPriceFilter = (event) => {
+        bookList.sort(function (a, b) {
+            if (a.price > b.price) {
+                return 1;
+            } else {
+                return -1;
+            }
+            return 0;
+        });
+
+        setChecked(() => {
+            return {
+                az: false,
+                za: false,
+                lowprice: false,
+                bigprice: true
             };
             });
 
@@ -98,16 +144,14 @@ function Categories({category,index}) {
                             <input type="radio" name="filter" checked={checked.za}></input> 
                             Z to A
                         </label>
-                        {/*
-                        <label class="btn-category">
-                            <input type="radio" name="filter"></input> 
+                        <label class="btn-category" onClick={lowPriceFilter}>
+                            <input type="radio" name="filter" checked={checked.lowprice}></input> 
                             Lowest Price
                         </label>
-                        <label class="btn-category">
-                            <input type="radio" name="filter"></input> 
+                        <label class="btn-category" onClick={bigPriceFilter}>
+                            <input type="radio" name="filter"checked={checked.bigprice}></input> 
                             Biggest Price
                         </label>
-                        */}
                     </form>
                     <div>
                         <ul class="user-journey">
