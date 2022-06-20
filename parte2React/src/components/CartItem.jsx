@@ -17,6 +17,8 @@ function removeItem(id){
 }
 function CartItem({item,index}){
     navigate=useNavigate();
+	console.log("id "+item.id);
+
 	return(
 	<div class="cart-item" onClick={() => clickedCard(item)}>
 		<img src={item.img}></img>

@@ -42,6 +42,7 @@ function App() {
             <Route path="/categories/drama" element={<><NavHeader/><Categories category="Drama" index={6}/></>}></Route>
             <Route path="/home/account/login" element={<><NavHeader/><Login /></>}></Route>
             <Route path="/home/account/register" element={<><NavHeader/><Register /></>}></Route>
+            <Route path="/home/account" element={<><NavHeader/><EditSettings /></>}></Route>
             <Route path="/home/account/settings" element={<><NavHeader/><ClientSettings /></>}></Route>
             <Route path="/home/account/settings/edit" element={<><NavHeader/><EditSettings /></>}></Route>
             <Route path="/admin" element={<><AdminNav/><Admin/></>}></Route>

@@ -57,14 +57,7 @@ function Categories({category,index}) {
             });
 
         setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
-        setChecked(() => {
-            return {
-                az: false,
-                za: true,
-                lowprice: false,
-                bigprice: false
-            };
-            });
+
     }
 
     const zaFilter = (event) => {
@@ -91,7 +84,7 @@ function Categories({category,index}) {
 
     const lowPriceFilter = (event) => {
         bookList.sort(function (a, b) {
-            if (a.price < b.price) {
+            if (a.price > b.price) {
                 return 1;
             } else {
                 return -1;
@@ -113,7 +106,7 @@ function Categories({category,index}) {
 
     const bigPriceFilter = (event) => {
         bookList.sort(function (a, b) {
-            if (a.price > b.price) {
+            if (a.price < b.price) {
                 return 1;
             } else {
                 return -1;
@@ -145,19 +138,24 @@ function Categories({category,index}) {
                     <form class="categories-column">
                         <div class="column-title" > Filter by</div>
                         
-                        <label class="btn-category" onClick={azFilter}>
+                        <label class="btn-category" style={{backgroundColor:(checked.az)?'black':'',
+                                                            color:(checked.az)?'white':''}} onClick={azFilter}>
                             <input type="radio" name="filter" checked={checked.az}></input> 
                             A to Z
                         </label>
-                        <label class="btn-category" onClick={zaFilter}>
+                        <label class="btn-category"
+                        style={{backgroundColor:(checked.za)?'black':'',
+                                                            color:(checked.za)?'white':''}}  onClick={zaFilter}>
                             <input type="radio" name="filter" checked={checked.za}></input> 
                             Z to A
                         </label>
-                        <label class="btn-category" onClick={lowPriceFilter}>
+                        <label class="btn-category" style={{backgroundColor:(checked.lowprice)?'black':'',
+                                                            color:(checked.lowprice)?'white':''}} onClick={lowPriceFilter}>
                             <input type="radio" name="filter" checked={checked.lowprice}></input> 
                             Lowest Price
                         </label>
-                        <label class="btn-category" onClick={bigPriceFilter}>
+                        <label class="btn-category" style={{backgroundColor:(checked.bigprice)?'black':'',
+                                                            color:(checked.bigprice)?'white':''}} onClick={bigPriceFilter}>
                             <input type="radio" name="filter"checked={checked.bigprice}></input> 
                             Biggest Price
                         </label>

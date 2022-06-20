@@ -19,7 +19,6 @@ function Cart() {
 		cart=[];
 	cartItens=[];
 	cart.forEach((id,i)=>{cartItens.push(<CartItem item={books[id]} index={i}/>)});
-
 	if(!cart.length){
 		return(
 				<div class="cart-container" onMouseOver={onMouseEnter} >
