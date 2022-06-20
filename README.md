@@ -23,14 +23,14 @@ Made by:<br/>
 Existe um botão "user" que permite ao usuário acessar as telas para entrar com uma conta existente, ou registrar no site. E também uma barra de pesquisa que permite ao cliente pesquisar por um livro do estoque.
 -	Possui uma página que exibe os livros de uma determinada categoria (genero literário) disponivel no site. E uma página com as informações de um livro selecionado e a opção para comprá-lo (adicionar ao carrinho). A ideia é que o carrinho apareça como um overlay no canto superior direito da tela.
 -	Com uma conta de admistrador, se tem acesso à uma página que permite gerenciar os livros no estoque e também à uma de gerenciamento dos usuários no site. 
--	(funcionalidade) Avaliação: a loja possui um sistema de avaliação, os clientes podendo dar estrelas para os livros e cada livro exibindo a média de estrelas que recebeu.
+-	(funcionalidade) Similares: Será mostrado livros similares ao selecionado pelo usuário
 -	(mockups)
 	- Mockup do website: https://www.figma.com/file/0fDviLw7DFfuNuaV6tuUFc/Site-Mockup?node-id=0%3A1;
 		- https://www.figma.com/proto/0fDviLw7DFfuNuaV6tuUFc/Site-Mockup?node-id=2%3A2&scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2
 
 	- Diagrama do website: https://www.figma.com/file/BkgTeQdphSKPElJ3EERYWc/Diagrama?node-id=0%3A1;
 	- HTML/CSS: estão no repositório;
--	(informação salva) Serão salvos todos os dados dos administradores (name, id, address, phone, email), clientes (name, id, phone, email)  e livros (name, id, photo, author, description, price, genres, quantity_in_stock, quantity_sold, stars_rate).
+-	(informação salva) Serão salvos todos os dados dos administradores (name, id, address, phone, email), clientes (name, id, phone, email)  e livros (name, id, photo, author, description, price, genres, quantity_in_stock, quantity_sold).
 
 ![alt text](Parte1_Mockups/img/diagrama.JPG)
 
@@ -39,13 +39,18 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 Nenhum.
 
 # Test Plan
-Não se aplica.
+Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa.
 
 # Test Results
-Não se aplica.
+A maior parte dos erros persistentes são devidos à falta de um servidor para que possam ser salvos os dados.
 
 # Build Procedures
-Para a primeira milestone é apenas necessário ter um browser para rodar os mockups.
+É necessário ter o npm e node instalado 
+-https://www.npmjs.com/package/npm;
+-https://nodejs.org/en/download/;
+
+Baixe os arquivos da pasta parte2React e inicie-os com npm start.
+(talvez seja necessário usar o yarn para as rotas yarn add react-router-dom@6)
 
 # Problems
 Nenhum.
