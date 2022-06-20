@@ -17,13 +17,15 @@ function addToCart(id){
     window.location.reload(false)
     window.scrollTo(0, 0);
 }
+function Book() {
+let rand=Math.floor(Math.random()*(books.length-4));
+let last=Math.min((rand+4),(books.length-1));
     const related={
         "title":"Livros Relacionados",
         "text":"",
-        "products":books.slice(4),
+        "products":books.slice(rand,last),
         "class":"section box related"
     };
-function Book() {
 const {state} = useLocation();
 const book= state; // Read values passed on state
 	return(
@@ -51,24 +53,9 @@ const book= state; // Read values passed on state
 			</div>
 
 			<div class="book-genres">
-				<h3>Genres</h3>
+				<h3>Genre</h3>
 				<div class="genre-bubble" >
-					<p>Young Adult</p>
-				</div>
-				<div class="genre-bubble" >
-					<p>Fiction</p>
-				</div>
-				<div class="genre-bubble" >
-					<p>Fantasy</p>
-				</div>
-				<div class="genre-bubble" >
-					<p>Science Fiction</p>
-				</div>
-				<div class="genre-bubble" >
-					<p>Romance</p>
-				</div>
-				<div class="genre-bubble" >
-					<p>Adventure</p>
+					<p>{book.genre}</p>
 				</div>
 			</div>
 		</div>

@@ -86,7 +86,7 @@ export const books=[
         "descriptionText":"Famous for introducing the character of the vampire Count Dracula, the novel tells the story of Dracula's attempt to move from Transylvania to England so he may find new blood and spread undead curse, and the battle between Dracula and a small group of men and women led by Professor Abraham Van Helsing. Dracula has been assigned to many literary genres including vampire literature, horror fiction, the gothic novel and invasion literature. The novel touches on themes such as the role of women in Victorian culture, sexual conventions, immigration, colonialism, and post-colonialism. Although Stoker did not invent the vampire, he defined its modern form, and the novel has spawned numerous theatrical, film and television interpretations."
     },
     {
-        "id":8,
+        "id":7,
         "name":"Nineteen Eighty-Four",
         "author":"George Orwell",
         "genre":"Sci-fi",
@@ -97,7 +97,7 @@ export const books=[
         "descriptionText":"Nineteen Eighty-Four has become a classic literary example of political and dystopian fiction. It also popularised the term Orwellian as an adjective, with many terms used in the novel entering common usage, including Big Brother, doublethink, Thought Police, thoughtcrime, Newspeak, and 2 + 2 = 5. Parallels have been drawn between the novel's subject matter and real life instances of totalitarianism, mass surveillance, and violations of freedom of expression among other themes."
     },
     {
-        "id":9,
+        "id":8,
         "name":"Heartstopper",
         "author":"Alice Oseman",
         "genre":"Romance",
@@ -108,7 +108,7 @@ export const books=[
         "descriptionText":"Heartstopper is a young adult LGBTQ+ ongoing graphic novel and webcomic series written and illustrated by British author Alice Oseman. It is the subject of the 2022 television series of the same name, directed by Euros Lyn."
     },
     {
-        "id":10,
+        "id":9,
         "name":"Notes from Underground",
         "author":"Fyodor Dostoevsky",
         "genre":"Phylosophy",
@@ -119,7 +119,7 @@ export const books=[
         "descriptionText":"The novella presents itself as an excerpt from the rambling memoirs of a bitter, isolated, unnamed narrator (generally referred to by critics as the Underground Man), who is a retired civil servant living in St. Petersburg. The first part of the story is told in monologue form through the Underground Man's diary, and attacks contemporary Russian philosophy, especially Nikolay Chernyshevsky's What Is to Be Done?. The second part of the book, called Apropos of the Wet Snow, describes certain events that appear to be destroying and sometimes renewing the underground man, who acts as a first person, unreliable narrator and anti-hero."
     },
     {
-        "id":11,
+        "id":10,
         "name":"The Lord of the Rings: The Fellowship of the Ring",
         "author":"J. R. R. Tolkien",
         "genre":"Fantasy",
@@ -130,7 +130,7 @@ export const books=[
         "descriptionText":"The volume contains a Prologue for readers who have not read The Hobbit, and background information to set the stage for the novel. The body of the volume consists of Book One: The Ring Sets Out, and Book Two: The Ring Goes South."
     },
     {
-        "id":12,
+        "id":11,
         "name":"The Lord of the Rings: The Two Towers",
         "author":"J. R. R. Tolkien",
         "genre":"Fantasy",
@@ -141,7 +141,7 @@ export const books=[
         "descriptionText":"Some editions of the volume contain a Synopsis for readers who have not read the earlier volumes. The body of the volume consists of Book Three: The Treason of Isengard, and Book Four: The Ring Goes East."
     },
     {
-        "id":13,
+        "id":12,
         "name":"The Lord of the Rings: The Return of the King",
         "author":"J. R. R. Tolkien",
         "genre":"Fantasy",
@@ -152,7 +152,7 @@ export const books=[
         "descriptionText":"Some editions of the volume contain a synopsis for readers who have not read the earlier volumes. The body of the volume consists of books five and six. Book six has variously been titled The Return of the King (clashing with the title of the third volume) and The End of the Third Age, though in many editions the Books are untitled. The volume ends with a set of appendices and an index, varying in different editions."
     },
     {
-        "id":14,
+        "id":13,
         "name":"Edgar Allan Poe: Medo Clássico Vol. 1",
         "author":"Edgar Allan Poe",
         "genre":"Horror",
@@ -164,7 +164,7 @@ export const books=[
         "descriptionText":"Edgar Allan Poe was a master of the tale of psychological horror and the author of what is considered the first modern detective story. This anthology gathers more than 20 of Poe’s groundbreaking tales of the macabre, among them “The Tell-Tale Heart,” “The Masque of the Red Death,” and “The Fall of the House of Usher.” It also includes his trilogy of stories featuring detective C. Auguste Dupin: “The Murders in the Rue Morgue,” “The Mystery of Marie Rôget,” and “The Purloined Letter.”"
     },
     {
-        "id":15,
+        "id":14,
         "name":"Dune",
         "author":"Frank Herbert",
         "genre":"Fantasy",
@@ -175,7 +175,7 @@ export const books=[
         "descriptionText":"Dune is set in the distant future amidst a feudal interstellar society in which various noble houses control planetary fiefs. It tells the story of young Paul Atreides, whose family accepts the stewardship of the planet Arrakis. While the planet is an inhospitable and sparsely populated desert wasteland, it is the only source of melange, or spice, a drug that extends life and enhances mental abilities. Melange is also necessary for space navigation, which requires a kind of multidimensional awareness and foresight that only the drug provides. As melange can only be produced on Arrakis, control of the planet is a coveted and dangerous undertaking. The story explores the multilayered interactions of politics, religion, ecology, technology, and human emotion, as the factions of the empire confront each other in a struggle for the control of Arrakis and its spice."
     },
     {
-        "id":16,
+        "id":15,
         "name":"The Stranger",
         "author":"Albert Camus",
         "genre":"Phylosophy",
@@ -184,7 +184,7 @@ export const books=[
         "img":require("../img/stranger.jpg"),
         "descriptionTitle":"The Stranger, is a 1942 novella by French author Albert Camus. Its theme and outlook are often cited as examples of Camus' philosophy, absurdism, coupled with existentialism; though Camus personally rejected the latter label.",
         "descriptionText":"Camus wrote this: I summarized The Stranger a long time ago, with a remark I admit was highly paradoxical: In our society any man who does not weep at his mother's funeral runs the risk of being sentenced to death. I only meant that the hero of my book is condemned because he does not play the game"
-    },];
+    }];
 
 export let cartData={
   "itens":[0,2,2]
