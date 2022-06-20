@@ -1,6 +1,6 @@
 # Project Report - Book Store
 
-![alt text](Mockup_Homepage/img/logo.png)
+![alt text](Parte1_Mockups/img/logo.png)
 Made by:<br/>
 -	Jônatas Alves Lopes - N°: 11796552<br/>
 -	Pedro Raymundi - N°: 11795634 
@@ -32,7 +32,7 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 	- HTML/CSS: estão no repositório;
 -	(informação salva) Serão salvos todos os dados dos administradores (name, id, address, phone, email), clientes (name, id, phone, email)  e livros (name, id, photo, author, description, price, genres, quantity_in_stock, quantity_sold, stars_rate).
 
-![alt text](Mockup_Homepage/img/diagrama.JPG)
+![alt text](Parte1_Mockups/img/diagrama.JPG)
 
 
 # Comments About the Code
