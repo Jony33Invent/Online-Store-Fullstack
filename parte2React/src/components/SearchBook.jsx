@@ -14,9 +14,11 @@ function clickedItem(book,set){
 }
 
 function searchButton(search,set){
-    navigate('/search', { state:search });  
-    window.scrollTo(0, 100);
-    set("");
+    if(search!=""){
+        navigate('/search', { state:search });  
+        window.scrollTo(0, 100);
+        set("");
+    }
 }
 function SearchBook() {
     navigate=useNavigate();
