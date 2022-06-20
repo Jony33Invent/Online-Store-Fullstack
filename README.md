@@ -46,8 +46,8 @@ A maior parte dos erros persistentes são devidos à falta de um servidor para q
 
 # Build Procedures
 É necessário ter o npm e node instalado 
-	-https://www.npmjs.com/package/npm;
-	-https://nodejs.org/en/download/;
+-	https://www.npmjs.com/package/npm;
+-	https://nodejs.org/en/download/;
 
 Baixe os arquivos da pasta parte2React e inicie-os com npm start.<br/>
 (talvez seja necessário usar o yarn para as rotas yarn add react-router-dom@6)
