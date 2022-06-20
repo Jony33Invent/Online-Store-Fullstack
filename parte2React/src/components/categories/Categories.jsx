@@ -34,6 +34,7 @@ function Categories({category,index}) {
 
     useEffect(() => {
         setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setChecked({az: false, za: false, lowprice: false, bigprice: false})
      },[location]);
 
     const azFilter = (event) => {
@@ -56,6 +57,14 @@ function Categories({category,index}) {
             });
 
         setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setChecked(() => {
+            return {
+                az: false,
+                za: true,
+                lowprice: false,
+                bigprice: false
+            };
+            });
     }
 
     const zaFilter = (event) => {
