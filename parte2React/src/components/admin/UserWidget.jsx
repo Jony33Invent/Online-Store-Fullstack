@@ -10,7 +10,7 @@ function UserWidget({user}) {
         let users = "null";
         let n=accountsArr.length;
         for (let i = 1; i < n; i++) {
-            if(accountsArr[i] !== localStorage.getItem("user"))
+            if(accountsArr[i] !== user.email)
                 users = users + ',' + accountsArr[i]
         }  
         event.preventDefault();
