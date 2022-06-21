@@ -58,4 +58,4 @@ Registre uma conta com o email "admin@email.com" para tre acesso à uma conta de
 Nenhum.
     
 # Comments
-Nenhum.
+Náo tem tela finalizando a compra já que não vai existir tela para os dados do cartão
