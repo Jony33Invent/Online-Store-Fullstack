@@ -58,4 +58,5 @@ Registre uma conta com o email "admin@email.com" para tre acesso à uma conta de
 Nenhum.
     
 # Comments
-Náo tem tela finalizando a compra já que não vai existir tela para os dados do cartão
+Não tem tela finalizando a compra já que não vai existir tela para os dados do cartão.
+Também não é possível alterar os dados dos produtos por parte do admin pq eles estão mockados em um .js
