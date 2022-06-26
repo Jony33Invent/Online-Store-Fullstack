@@ -39,7 +39,7 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 Nenhum.
 
 # Test Plan
-Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa.
+Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa. Crie uma conta com o email "admin@email.com" para testar os comandos do admin
 
 # Test Results
 A maior parte dos erros persistentes são devidos à falta de um servidor para que possam ser salvos os dados.
