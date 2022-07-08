@@ -1,19 +1,30 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
+
 import '.././styles/style.css';
 import '.././styles/dropdown.css';
 import SectionBox from './SectionBox';
-import {books} from '../BookData';
+
+
+function Home() {
+    const [bookData,setBookData]=useState([]);
+    useEffect(()=>{
+        fetch("/books").then(
+            response=>response.json()
+            ).then(
+                data=>{
+                    setBookData(data)
+                }
+            )
+    },[])
 
     const populares={
         "title":"Mais Populares",
         "text":"Clique para ver mais...",
-        "products":books.slice(0,4),
+        "products":bookData.slice(0,4),
         "class":"section box"
     };
 
-    const bookList = books.filter(item => 
-        (item.genre.toLowerCase().includes("horror"))
-    )
+    const bookList = bookData.filter(item => item.genre.toLowerCase().includes("horror"));
 
     const terror={
         "title":"Clássicos do Terror",
@@ -21,13 +32,14 @@ import {books} from '../BookData';
         "products":bookList,
         "class":"section box horror"
     };
-function Home() {
+
 
     return (
         <div>
-            <img src={require("../../img/img1.png")} class="preview-img" alt="homepage figure"></img>
-            <SectionBox section={populares}></SectionBox>
-            <SectionBox section={terror}></SectionBox>
+            <img src={"https://i.imgur.com/3UgHN6j.png"} class="preview-img" alt="homepage figure"></img>
+            {(populares.products.length>0)?<SectionBox section={populares}></SectionBox>:<></>}
+            {(terror.products.length>0)?<SectionBox section={terror}></SectionBox>:<></>}
+            
         </div>
     )
 }

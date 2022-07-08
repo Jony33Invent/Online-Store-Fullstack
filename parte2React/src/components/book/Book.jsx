@@ -1,10 +1,9 @@
-import React from "react";
+import React,{useEffect,useState}  from "react";
 import '.././styles/style.css';
 import '.././styles/book.css';
 import { useLocation } from "react-router-dom";
 import {cartData} from '../BookData';
 import SectionBox from '../home/./SectionBox';
-import {books} from '../BookData';
 
 //Adiciona cada livro para o carrinho com o localStorage
 let readingMore=false;
@@ -18,15 +17,28 @@ function addToCart(id){
     window.scrollTo(0, 0);
 }
 function Book() {
+
+    const [bookData,setBookData]=useState([]);
+    useEffect(()=>{
+        fetch("/books").then(
+            response=>response.json()
+            ).then(
+                data=>{
+                    setBookData(data)
+                }
+            )
+    },[])
+
 	//valores para os livros relacionados (só vai dar pra implementar realmente com o servidor)
-	let rand=Math.floor(Math.random()*(books.length-4));
-	let last=Math.min((rand+4),(books.length-1));
+	let rand=Math.floor(Math.random()*(bookData.length-4));
+	let last=Math.min((rand+4),(bookData.length-1));
 	const related={
 		"title":"Livros Relacionados",
 		"text":"",
-		"products":books.slice(rand,last),
+		"products":bookData.slice(rand,last),
 		"class":"section box related"
 	};
+	
 	const {state} = useLocation();
 	const book= state;
 	//basicamente o html da página com a função de adicionar o item no carrinho

@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {useLocation} from "react-router-dom";
 import '.././styles/style.css';
 import '.././styles/category.css';
-import {books} from '../BookData';
 import ProductCard from '../home/ProductCard';
 
 //Cores do fundo de cada categoria
@@ -17,6 +16,17 @@ function BkColor(id) {
 
 const r = document.querySelector(':root');
 function Categories({category,index}) {
+
+    const [bookData,setBookData]=useState([]);
+    useEffect(()=>{
+        fetch("/books").then(
+            response=>response.json()
+            ).then(
+                data=>{
+                    setBookData(data)
+                }
+            )
+    },[])
     const bkColor=BkColor(index);
     r.style.setProperty('--category-color', bkColor);
     r.style.setProperty('--category-section-color', bkColor+"DC");
@@ -25,12 +35,13 @@ function Categories({category,index}) {
 
     //Carrega os livros da categoria
     let location = useLocation();
-    const bookList = books.filter(item => {
+    const bookList = bookData.filter(item => {
         if(category === ""){
             return item;
         }
         else if(item.genre.toLowerCase().includes(category.toLowerCase())){return item}
     })
+
     const [itens, setItens] = useState(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
 
     //Quando o usuário clica em outra categoria os settings resetam e os novos produtos são puxados
