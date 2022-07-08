@@ -11,9 +11,9 @@ import {books} from '../BookData';
         "class":"section box"
     };
 
-    const bookList = books.filter(item => {
-        if(item.genre.toLowerCase().includes("horror")){return item}
-    })
+    const bookList = books.filter(item => 
+        (item.genre.toLowerCase().includes("horror"))
+    )
 
     const terror={
         "title":"Clássicos do Terror",

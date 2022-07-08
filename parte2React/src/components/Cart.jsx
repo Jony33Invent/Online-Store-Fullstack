@@ -2,10 +2,10 @@ import React from "react";
 import './styles/cart.css';
 import './styles/style.css';
 import CartItem from "./CartItem";
-import {cartData, books} from './BookData';
-import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
+import {books} from './BookData';
+import {Link} from "react-router-dom";
 
-let cartItens,cart;
+let cartItens;
 
 let user = localStorage.getItem("user");
 

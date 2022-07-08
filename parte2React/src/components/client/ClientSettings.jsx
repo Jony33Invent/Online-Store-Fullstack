@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 function ClientSettings() {
     const navigate = useNavigate()
     //pega os valores do local storage para mostrar ao usuário
-    const [values, setValues] = useState({
+    const [values] = useState({
         name: localStorage.getItem(localStorage.getItem("user") + "name"),
         adress: localStorage.getItem(localStorage.getItem("user") + "adress"),
         email: localStorage.getItem(localStorage.getItem("user"))
