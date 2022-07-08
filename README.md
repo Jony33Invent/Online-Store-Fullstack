@@ -39,7 +39,7 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 Nenhum.
 
 # Test Plan
-Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa.
+Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa. Crie uma conta com o email "admin@email.com" para testar os comandos do admin
 
 # Test Results
 A maior parte dos erros persistentes são devidos à falta de um servidor para que possam ser salvos os dados.
@@ -58,4 +58,5 @@ Registre uma conta com o email "admin@email.com" para tre acesso à uma conta de
 Nenhum.
     
 # Comments
-Nenhum.
+Não tem tela finalizando a compra já que não vai existir tela para os dados do cartão.
+Também não é possível alterar os dados dos produtos por parte do admin pq eles estão mockados em um .js
