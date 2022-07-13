@@ -19,13 +19,6 @@ function ClientSettings() {
         setUserData(user);
     };
 
-    //pega os valores do local storage para mostrar ao usuário
-    const [values] = useState({
-        name: userData.name,
-        adress: userData.adress,
-        email: userData.email
-    });
-
     //resetando os tokens para quando o usuário sai da conta
     const handleExit = (event) => {
         event.preventDefault();
@@ -35,14 +28,15 @@ function ClientSettings() {
         window.location.reload(false)
     }
 
-
+    
+    console.log(userData.name)
     return (
         <div className="login-group">
             <form class="login-base">
                 <h1>Settings</h1>
-                <p class="login-base-param">Name: {values.name} </p>
-                <p class="login-base-param">Adress: {values.adress} </p>
-                <p class="login-base-param">Email: {values.email} </p>
+                <p class="login-base-param">Name: {userData.name} </p>
+                <p class="login-base-param">Adress: {userData.adress} </p>
+                <p class="login-base-param">Email: {userData.email} </p>
             
                 <input type="submit" class="login-btn" name="" value="Exit account" onClick={handleExit}></input>
                 <Link to="/home/account/settings/edit">

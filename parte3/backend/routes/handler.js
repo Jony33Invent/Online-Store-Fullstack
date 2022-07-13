@@ -6,7 +6,6 @@ const Data = require("../models/Schemas");
 exports.get = (req, res, next) => {
 	Data.Books.find({}).then(function (books) {
 		res.status(200).send(books);
-        console.log(books)
 	});
 };
 
@@ -39,23 +38,22 @@ exports.getUserByEmail = (req, res, next) => {
 	Data.Users.findOne({ email: email }).then(function (client) {
 		if (client != null) {
 			res.status(200).send(client);
-		}/* else {
-			Data.Users(req.body).save();
-			res.status(201).send(req.body);
-		}*/
+		}
 	});
 };
 
 exports.putUser = (req, res, next) => {
-	const id = req.params.id;
+	const email = req.body.email;
 
-	Data.Users.findOne({ id: id }).then(function (client) {
+	Data.Users.findOne({ email: email }).then(function (client) {
 		if (client != null) {
-			Data.findByIdAndDelete(client._id).then(() => {
+			console.log("1")
+			Data.Users.findByIdAndDelete(client._id).then(() => {
 				Data.Users(req.body).save();
 				res.status(201).send(req.body);
 			});
 		} else {
+			console.log("2")
 			Data.Users(req.body).save();
 			res.status(201).send(req.body);
 		}

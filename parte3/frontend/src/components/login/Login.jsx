@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import '.././styles/style.css';
 import '.././styles/login.css';
 import { useNavigate,Link} from "react-router-dom";
 
 function Login() {
     const navigate = useNavigate()
-
-    //dados da tentativa de login
-    const [userData,setUserData]=useState([]);
-
-    const fetchItems = async () => {
-        const data = await fetch('http://localhost:4000/users/' + values.email);
-        const user = await data.json();
-        setUserData(user);
-    };
 
     const [values, setValues] = useState({
         email: "",
@@ -32,27 +23,30 @@ function Login() {
         setValues({...values, password: event.target.value})
     }
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
+
+        console.log(values.email)
         event.preventDefault();
         setFirstTry(false);
         if (values.email && values.password) {
             setFilledData(true);
+            const data = await fetch('http://localhost:4000/users/' + values.email);
+            const user = await data.json();
         
-            fetchItems();
-        }
-        console.log(userData.email)
-        //verificação do login sem criptografia nem nada pq n tem servidor mesmo
-        if(values.email && values.password && values.password === userData.password) {
-            setLogged(true);
-            //se é admin ele vi ter um token a mais
-            localStorage.setItem("user", values.email);
-            if(values.email=="admin@email.com"){
-                localStorage.setItem("admin",1);
-                navigate('/admin')
-                window.location.reload(false)
-            }else{
-                navigate('/')
-                window.location.reload(false)
+            //verificação do login sem criptografia nem nada pq n tem servidor mesmo
+            if(values.password === user.password) {
+                setLogged(true);
+                //se é admin ele vi ter um token a mais
+                localStorage.setItem("user", user.email);
+                localStorage.setItem("admin", user.admin);
+                if(user.admin){
+                    localStorage.setItem("admin",1);
+                    navigate('/admin')
+                    window.location.reload(false)
+                }else{
+                    navigate('/')
+                    window.location.reload(false)
+                }
             }
         }
     }
@@ -68,7 +62,7 @@ function Login() {
                 <p class="login-base-param">Password: <input class="login-input" type="password" 
                     value={values.password} onChange={handlePassword}></input></p>
                 <input type="submit" class="login-btn" name="" value="Login"></input>
-                <p>Don't have an account <Link to="/home/account/register"><a href="" class="login-link">Register</a></Link></p>
+                <p>Don't have an account <Link to="/home/account/register"><a href="#self" class="login-link">Register</a></Link></p>
             </form>
         </div>
      )

@@ -1,18 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import '.././styles/style.css';
 import '.././styles/login.css';
 import { useNavigate } from 'react-router-dom';
+
+
+
 function Login() {
     const navigate = useNavigate()
 
-    //Pega o valor inicial do user no localStorage
     const [values, setValues] = useState({
-        name: localStorage.getItem(localStorage.getItem("user") + "name"),
-        adress: localStorage.getItem(localStorage.getItem("user") + "adress"),
-        email: localStorage.getItem(localStorage.getItem("user")),
-        password: localStorage.getItem(localStorage.getItem("user") + "password"),
+        name: "",
+        adress: "",
+        email: "",
+        password: "",
+        admin: ""
     });
 
+    //Pega o valor inicial do user no server
+    useEffect(()=>{
+		fetchItems();
+    },[])
+    
+    const fetchItems = async () => {
+        const data = await fetch('http://localhost:4000/users/' + localStorage.getItem(localStorage.getItem("user")));
+        const user = await data.json();
+        setValues({
+            ...values, 
+            name: user.name,
+            adress: user.adress,
+            email: user.email,
+            password: user.password,
+            admin: user.admin
+        })
+    };
+
+    const placeItems = async () => {
+        await fetch(
+            'http://localhost:4000/users/' + localStorage.getItem(localStorage.getItem("user")),
+            {
+            method: "PUT",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+            }
+        );
+    }
+
+
+    
     const [firstTry, setFirstTry] = useState(true)
     const [filledData, setFilledData] = useState(false)
 
@@ -34,11 +71,7 @@ function Login() {
         event.preventDefault();
         setFirstTry(false);
         if (values.email && values.password && values.adress && values.name) {
-            localStorage.setItem(values.email + 'name', values.name);
-            localStorage.setItem(values.email, values.email);
-            localStorage.setItem(values.email + 'adress', values.adress);
-            localStorage.setItem(values.email + 'password', values.password);
-            localStorage.setItem("user", values.email);
+            placeItems();
             setFilledData(true);
             navigate('/home/account/settings')
             window.location.reload(false)
