@@ -25,10 +25,20 @@ exports.put = (req, res, next) => {
 	});
 };
 
+exports.deleteBook = (req, res, next) => {
+	const _id = req.params._id;
+	Data.Books.findOneAndDelete({ _id: _id }).then(function (book) {
+		if (book) {
+			res.status(204).send();
+		} else {
+			res.status(404).send();
+		}
+	});
+};
+
 //USERS
 exports.getUser = (req, res, next) => {
 	Data.Users.find({}).then(function (client) {
-		console.log(client)
 		res.status(200).send(client);
 	});
 };

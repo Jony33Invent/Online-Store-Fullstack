@@ -1,9 +1,7 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import './styles/cart.css';
 import './styles/style.css';
-/*
 import CartItem from "./CartItem";
-import {books} from './BookData';
 import {Link} from "react-router-dom";
 
 let cartItens;
@@ -12,14 +10,32 @@ let user = localStorage.getItem("user");
 
 function onMouseEnter(event) {
 	user = localStorage.getItem("user")
+	console.log(user);
 }
 
 function Cart() {
 	let cart = JSON.parse(localStorage.getItem('cart'));
+    const [bookData,setBookData]=useState([]);
 	if(cart==null)
 		cart=[];
 	cartItens=[];
-	cart.forEach((id,i)=>{cartItens.push(<CartItem item={books[id]} index={i}/>)});
+    useEffect(()=>{
+    	fetchItems();
+    },[])
+
+    const fetchItems = async () => {
+        const data = await fetch('http://localhost:4000/books');
+        const items = await data.json();
+        setBookData(items);
+    };
+    
+    bookData.forEach((book,i)=>{
+		cart.forEach((id,i)=>{
+			if(book._id==id)
+				cartItens.push(<CartItem item={book} index={i}/>)
+		});
+    });
+
 	if(!cart.length){
 		return(
 				<div class="cart-container" onMouseOver={onMouseEnter} >
@@ -27,6 +43,8 @@ function Cart() {
 					</div>
 					<h3>Carrinho Vazio</h3>
 					<p>Produtos selecionados aparecerão aqui.</p>
+					
+				
 				</div>
 				)
 	}else{
@@ -35,19 +53,11 @@ function Cart() {
 				<div class="cart-col">
 					{cartItens}
 				</div>
-				<Link to={ user ? "/" : "/home/account/login"}><div class="cart-btn">Finalizar Compra</div></Link>
+				<Link to={ user ? "/purchase" : "/home/account/login"}><div class="cart-btn">Purchase</div></Link>
 				
 			</div>
 		)
 	}
-}*/
-
-function Cart() {
-	return(
-		<div class="cart-container">
-			<h1>carrinho</h1>
-		</div>
-	)
 }
 
 export default Cart

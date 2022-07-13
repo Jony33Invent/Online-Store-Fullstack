@@ -63,7 +63,7 @@ function Book() {
 				<div class="book-buy">
 					<h2>R$ {book.price.toFixed(2)}</h2>
 					<div class="book-buy-button">
-						<button id="comprar"onClick={()=>addToCart(book.id)}> <i class="icon-link fa-solid fa-cart-shopping" ></i> Comprar Agora</button>
+						<button id="comprar"onClick={()=>addToCart(book._id)}> <i class="icon-link fa-solid fa-cart-shopping" ></i> Comprar Agora</button>
 					</div>
 				</div>
 

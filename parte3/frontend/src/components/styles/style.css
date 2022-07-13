@@ -169,10 +169,10 @@ a.icon-circle{
   margin-right: 20px;
 }
 /* Form */
-form.search-bar{
+.search-bar{
 display: flex;
 }
-  form.search-bar input[type=text] {
+  .search-bar input[type=text] {
     font-size: 14px;
     padding: 10px;
     border: 1px solid grey;
@@ -182,7 +182,7 @@ display: flex;
     border-radius: 4px;
   }
 
-  form.search-bar .search-btn {
+  .search-bar .search-btn {
     height: 30px;
     width: 30px;
     border-radius: 4px;
@@ -197,16 +197,16 @@ display: flex;
   transition: background-color 0.6s ease;
   }
 
-  form.search-bar .search-btn:hover {
+  .search-bar .search-btn:hover {
     background: var(--primary-hover-color);
   transition: background-color 0.6s ease;
   }
 
-  form.search-bar .search-btn:active {
+  .search-bar .search-btn:active {
     background: lightgrey;
   transition: background-color 0.6s ease;
   }
-  form.search-bar::after {
+  .search-bar::after {
     content: "";
     clear: both;
     display: table;

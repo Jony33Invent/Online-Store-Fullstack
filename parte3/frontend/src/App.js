@@ -1,6 +1,4 @@
-import './App.css';
-//teste de conexão
-//import Book from './components/Book';
+import React from 'react'
 import Header from './components/Header';
 import NavHeader from './components/NavHeader';
 import Footer from './components/Footer';
@@ -15,40 +13,50 @@ import Book from './components/book/Book';
 import Search from './components/Search';
 import Admin from './components/admin/Admin';
 import BookEdit from './components/admin/BookEdit';
+import BookCreate from './components/admin/BookCreate';
 import AdminNav from "./components/admin/AdminNav";
 import Users from "./components/admin/Users";
+import CartPage from "./components/CartPage";
 
+import Purchase from "./components/Purchase";
 import {
   BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
 
+
 function App() {
+
+  const admin=localStorage.getItem("admin");
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
+        {(admin=='1')?<AdminNav/>:<NavHeader/>}
           <Routes>
-            <Route path="/" element={<><NavHeader/><Home /></>}></Route>
-            <Route path="/book" element={<><NavHeader/><Book/></>}></Route>
-            <Route path="/book/edit" element={<><AdminNav/><BookEdit/></>}></Route>
-            <Route path="/categories" element={<><NavHeader/><Categories category=""/></>}></Route>
-            <Route path="/search" element={<><NavHeader/><Search/></>}></Route>
-            <Route path="/categories/phylosophy" element={<><NavHeader/><Categories category="Phylosophy" index={0}/></>}></Route>
-            <Route path="/categories/adventure" element={<><NavHeader/><Categories category="Adventure" index={1}/></>}></Route>
-            <Route path="/categories/horror" element={<><NavHeader/><Categories category="Horror" index={2}/></>}></Route>
-            <Route path="/categories/romance" element={<><NavHeader/><Categories category="Romance" index={3}/></>}></Route>
-            <Route path="/categories/sci-fi" element={<><NavHeader/><Categories category="Sci-Fi" index={4}/></>}></Route>
-            <Route path="/categories/fantasy" element={<><NavHeader/><Categories category="Fantasy" index={5}/></>}></Route>
-            <Route path="/categories/drama" element={<><NavHeader/><Categories category="Drama" index={6}/></>}></Route>
-            <Route path="/home/account/login" element={<><NavHeader/><Login /></>}></Route>
-            <Route path="/home/account/register" element={<><NavHeader/><Register /></>}></Route>
-            <Route path="/home/account" element={<><NavHeader/><EditSettings /></>}></Route>
-            <Route path="/home/account/settings" element={<><NavHeader/><ClientSettings /></>}></Route>
-            <Route path="/home/account/settings/edit" element={<><NavHeader/><EditSettings /></>}></Route>
-            <Route path="/admin" element={<><AdminNav/><Admin/></>}></Route>
-            <Route path="/admin/users" element={<><AdminNav/><Users/></>}></Route>
+            <Route path="/" element={<><Home /></>}></Route>
+            <Route path="/book" element={<><Book/></>}></Route>
+            <Route path="/book/edit" element={<><BookEdit/></>}></Route>
+            <Route path="/book/create" element={<><BookCreate/></>}></Route>
+            <Route path="/categories" element={<><Categories category=""/></>}></Route>
+            <Route path="/search" element={<><Search/></>}></Route>
+            <Route path="/categories/phylosophy" element={<><Categories category="Phylosophy" index={0}/></>}></Route>
+            <Route path="/categories/adventure" element={<><Categories category="Adventure" index={1}/></>}></Route>
+            <Route path="/categories/horror" element={<><Categories category="Horror" index={2}/></>}></Route>
+            <Route path="/categories/romance" element={<><Categories category="Romance" index={3}/></>}></Route>
+            <Route path="/categories/sci-fi" element={<><Categories category="Sci-Fi" index={4}/></>}></Route>
+            <Route path="/categories/fantasy" element={<><Categories category="Fantasy" index={5}/></>}></Route>
+            <Route path="/categories/drama" element={<><Categories category="Drama" index={6}/></>}></Route>
+            <Route path="/home/account/login" element={<><Login /></>}></Route>
+            <Route path="/home/account/register" element={<><Register /></>}></Route>
+            <Route path="/home/account" element={<><EditSettings /></>}></Route>
+            <Route path="/home/account/settings" element={<><ClientSettings /></>}></Route>
+            <Route path="/home/account/settings/edit" element={<><EditSettings /></>}></Route>
+            <Route path="/admin" element={<><Admin/></>}></Route>
+            <Route path="/admin/users" element={<><Users/></>}></Route>
+            <Route path="/cart" element={<><CartPage/></>}></Route>
+            <Route path="/purchase" element={<><Purchase/></>}></Route>
           </Routes>
         <Footer />
       </BrowserRouter>

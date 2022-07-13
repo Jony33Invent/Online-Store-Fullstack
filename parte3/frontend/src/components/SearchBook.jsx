@@ -25,20 +25,24 @@ function SearchBook() {
         const items = await data.json();
         setBookData(items);
     };
-
     const [list, setList] = useState("");
 
+    const handleKeyPress = (event) => {
+      if(event.key === 'Enter'){
+        searchButton(list,setList)
+      }
+    }
     return (
         <div>
-            <form class="search-bar" action="/action_page.php">
+            <div class="search-bar" action="/action_page.php">
                 <input type="text"
                     className="form-control"
                     placeholder="search..."
                     onChange={(event) => {
                         setList(event.target.value);
-                }}></input>
+                }}onKeyPress={handleKeyPress}></input>
                 <div class="search-btn" onClick={()=>searchButton(list,setList)}><i class="fa fa-search"></i></div>
-            </form>
+            </div>
             {
             <div className="main" style={{display:(list==="")?"none":"flex"}}>
                 {Data.filter(item => {

@@ -5,21 +5,18 @@ import '.././styles/login.css';
 import { useLocation,useNavigate } from "react-router-dom";
 
 
-function BookEdit({section}) {
+function BookCreate() {
     
     const navigate = useNavigate()
-const {state} = useLocation();
-const book= state; // Read values passed on state
-
     const [values, setValues] = useState({
-        name: book.name,
-        author: book.author,
-        genre:book.genre,
-        price:book.price,
-        quantity:book.quantity,
-        img:book.img,
-        descriptionTitle:book.descriptionTitle,
-        descriptionText:book.descriptionText
+        name: "",
+        author: "",
+        genre:"",
+        price:0,
+        quantity:0,
+        img:"",
+        descriptionTitle:"",
+        descriptionText:""
     });
 
 
@@ -37,32 +34,12 @@ const book= state; // Read values passed on state
         );
 
     }   
-     const deleteBook = async () => {
-        await fetch(
-            'http://localhost:4000/books/'+book._id,
-            {
-            method: "DELETE",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            }
-        );
-    }
-
-    const handleDelete = (event) => {
-
-        event.preventDefault();
-        deleteBook();
-        navigate('/admin');
-        window.location.reload(false);
-    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
             if (values.name && values.author && values.descriptionText && values.price) {
                 updateBook();
-            navigate('/admin')
+            navigate('/admin');
             window.location.reload(false)
         }
     }
@@ -95,7 +72,7 @@ const book= state; // Read values passed on state
         <div class="login-group">
             <form class="bookedit-base" onSubmit={handleSubmit}>
                 <div>
-                <h1><b>Edit Book</b></h1>
+                <h1><b>Create Book</b></h1>
                 <p class="bookedit-base-param">Name: <input class="bookedit-input" type="text" 
                     value={values.name} onChange={handleName}></input></p>
                 <p class="bookedit-base-param">Author: <input class="bookedit-input" type="text" 
@@ -112,16 +89,12 @@ const book= state; // Read values passed on state
                     value={values.genre} onChange={handleGenre} ></input></p>
                 <p class="bookedit-base-param">Quantity: <input class="bookedit-input" type="number" 
                     value={values.quantity} onChange={handleQuantity} ></input></p>
-                <input type="submit" class="login-btn" name="" value="Apply Changes"></input>
-                <input type="button" class="login-btn" onClick={handleDelete} name="" value="Delete Book"></input>
+                <input type="submit" class="login-btn" name="" value="Create Book"></input>
 
                 </div>
 
-                <div class="book-image">
-                    <img id="hunger-games" src={book.img}></img>
-                </div>
             </form>
         </div>
      )
 }
-export default BookEdit
+export default BookCreate

@@ -134,6 +134,15 @@ function Search() {
     return (
             <>
 
+            <div class="title-div">
+                <h1 class="category-title" style={{ 
+      backgroundImage: `url("https://static01.nyt.com/images/2015/10/24/opinion/24manguel/24manguel-superJumbo.jpg")` ,
+        backgroundSize: '100%',
+        backgroundPosition:'50% 80%'
+    }}>
+                    Search
+                </h1>
+            </div>
                 <div class="category-main">
                     <form class="categories-column">
                         <div class="column-title" > Filter by</div>
