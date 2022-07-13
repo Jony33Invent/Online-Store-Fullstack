@@ -37,8 +37,7 @@ function Login() {
             if(values.password === user.password) {
                 setLogged(true);
                 //se é admin ele vi ter um token a mais
-                localStorage.setItem("user", user.email);
-                localStorage.setItem("admin", user.admin);
+                localStorage.setItem("user", values.email);
                 if(user.admin){
                     localStorage.setItem("admin",1);
                     navigate('/admin')

@@ -9,8 +9,23 @@ function Login() {
         name: "",
         adress: "",
         email: "",
-        password: ""
+        password: "",
+        admin: 0
     });
+
+    const placeItems = async () => {
+        await fetch(
+            'http://localhost:4000/users/' + localStorage.getItem(localStorage.getItem("user")),
+            {
+            method: "PUT",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+            }
+        );
+    }
 
     const [firstTry, setFirstTry] = useState(true)
     const [filledData, setFilledData] = useState(false)
@@ -32,21 +47,11 @@ function Login() {
         event.preventDefault();
         setFirstTry(false);
         if (values.email && values.password && values.adress && values.name) {
-            localStorage.setItem(values.email + 'name', values.name);
-            localStorage.setItem(values.email, values.email);
-            localStorage.setItem(values.email + 'adress', values.adress);
-            localStorage.setItem(values.email + 'password', values.password);
-            localStorage.setItem("users", localStorage.getItem("users") + ',' + values.email)
+            placeItems();
             localStorage.setItem("user", values.email);
             setFilledData(true);
-            if(values.email==="admin@email.com"){
-                localStorage.setItem("admin",1);
-                navigate('/admin')
-                window.location.reload(false)
-            }else{
-                navigate('/')
-                window.location.reload(false)
-            }
+            navigate('/')
+            window.location.reload(false)
         }
     }
 

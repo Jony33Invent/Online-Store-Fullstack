@@ -22,7 +22,7 @@ function Login() {
     },[])
     
     const fetchItems = async () => {
-        const data = await fetch('http://localhost:4000/users/' + localStorage.getItem(localStorage.getItem("user")));
+        const data = await fetch('http://localhost:4000/users/' + localStorage.getItem("user"));
         const user = await data.json();
         setValues({
             ...values, 
@@ -36,7 +36,7 @@ function Login() {
 
     const placeItems = async () => {
         await fetch(
-            'http://localhost:4000/users/' + localStorage.getItem(localStorage.getItem("user")),
+            'http://localhost:4000/users/' + localStorage.getItem("user"),
             {
             method: "PUT",
             headers: {
@@ -44,6 +44,19 @@ function Login() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(values),
+            }
+        );
+    }
+
+    const deleteItems = async () => {
+        await fetch(
+            'http://localhost:4000/users/' + localStorage.getItem("user"),
+            {
+            method: "DELETE",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
             }
         );
     }
@@ -80,21 +93,13 @@ function Login() {
 
     //Deleta todos os dados do usuário + o seu email do banco de dados do adm (sequencial porque ta tudo csv no local Storage)
     const handleDelete = (event) => {
-        var accountsArr = localStorage.getItem("users").split(',');
-        let users = "null";
-        let n=accountsArr.length;
-        for (let i = 1; i < n; i++) {
-            if(accountsArr[i] !== localStorage.getItem("user"))
-                users = users + ',' + accountsArr[i]
-        }  
         event.preventDefault();
-        localStorage.removeItem(localStorage.getItem("user") + "password")
-        localStorage.removeItem(localStorage.getItem("user") + "adress")
-        localStorage.removeItem(localStorage.getItem("user") + "name")
-        localStorage.removeItem(localStorage.getItem("user"))
+
+        deleteItems();
+
         localStorage.removeItem("user")
-        localStorage.setItem("users", users)
         navigate('/')
+        localStorage.setItem("admin",0);
         window.location.reload(false)
     }
 

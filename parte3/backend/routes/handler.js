@@ -10,11 +10,11 @@ exports.get = (req, res, next) => {
 };
 
 exports.put = (req, res, next) => {
-	const id = req.params.id;
+	const name = req.body.name;
 
-	Data.Books.findOne({ id: id }).then(function (product) {
-		if (product != null) {
-			Data.findByIdAndDelete(product._id).then(() => {
+	Data.Books.findOne({ name: name }).then(function (client) {
+		if (client != null) {
+			Data.Books.findByIdAndDelete(client._id).then(() => {
 				Data.Books(req.body).save();
 				res.status(201).send(req.body);
 			});
@@ -47,15 +47,24 @@ exports.putUser = (req, res, next) => {
 
 	Data.Users.findOne({ email: email }).then(function (client) {
 		if (client != null) {
-			console.log("1")
 			Data.Users.findByIdAndDelete(client._id).then(() => {
 				Data.Users(req.body).save();
 				res.status(201).send(req.body);
 			});
 		} else {
-			console.log("2")
 			Data.Users(req.body).save();
 			res.status(201).send(req.body);
+		}
+	});
+};
+
+exports.deleteUser = (req, res, next) => {
+	const email = req.params.email;
+	Data.Users.findOneAndDelete({ email: email }).then(function (client) {
+		if (client) {
+			res.status(204).send();
+		} else {
+			res.status(404).send();
 		}
 	});
 };

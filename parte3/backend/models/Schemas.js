@@ -16,7 +16,7 @@ const bookSchema = new Schema({
     price: {type:Number, required:true},
     quantity: {type:Number, required:true},
     genre: {type:String, required:true},
-    descriptionTitle: {type:String, required:true},
+    descriptionTitle: {type:String, required:false},
     descriptionText: {type:String, required:true}
 });
 

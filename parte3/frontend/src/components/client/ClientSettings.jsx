@@ -14,7 +14,7 @@ function ClientSettings() {
     },[])
 
     const fetchItems = async () => {
-        const data = await fetch('http://localhost:4000/users/' + localStorage.getItem(localStorage.getItem("user")));
+        const data = await fetch('http://localhost:4000/users/' + localStorage.getItem("user"));
         const user = await data.json();
         setUserData(user);
     };
@@ -28,7 +28,7 @@ function ClientSettings() {
         window.location.reload(false)
     }
 
-    
+    console.log(localStorage.getItem("user"))
     console.log(userData.name)
     return (
         <div className="login-group">
