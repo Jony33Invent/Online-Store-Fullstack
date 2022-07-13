@@ -39,24 +39,23 @@ Existe um botão "user" que permite ao usuário acessar as telas para entrar com
 Nenhum.
 
 # Test Plan
-Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa. Crie uma conta com o email "admin@email.com" para testar os comandos do admin
+Testes manuais verificando cada página e suas funcionalidades, buscando encontrar erros e locais para melhora, não foi utilizada nenhuma ferramenta externa.
 
 # Test Results
-A maior parte dos erros persistentes são devidos à falta de um servidor para que possam ser salvos os dados.
+Nada a comentar.
 
 # Build Procedures
 É necessário ter o npm e node instalado 
 -	https://www.npmjs.com/package/npm;
 -	https://nodejs.org/en/download/;
 
-Baixe os arquivos da pasta parte2React, vá até o diretório e use npm install e, por fim, inicie-os com npm start.<br/>
+Baixe os arquivos da pasta parte3, vá até o diretório do frontend e use "npm install". Feito isso, abra o diretório do backend e digite "nodemon start", por fim, inicie-os com npm start.<br/>
 (talvez seja necessário usar o yarn para as rotas yarn add react-router-dom@6)
 
-Registre uma conta com o email "admin@email.com" para tre acesso à uma conta de admin
+A conta base com permissão de administrador é o email "admin@email.com" e senha "123"
 
 # Problems
 Nenhum.
     
 # Comments
-Não tem tela finalizando a compra já que não vai existir tela para os dados do cartão.
-Também não é possível alterar os dados dos produtos por parte do admin pq eles estão mockados em um .js
+Somente o dba teria como alterar usuários para serem administradores por meio do banco de dados.
