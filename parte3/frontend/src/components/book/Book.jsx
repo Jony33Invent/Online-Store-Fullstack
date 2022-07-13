@@ -15,8 +15,11 @@ function addToCart(id){
     window.location.reload(false)
     window.scrollTo(0, 0);
 }
+
 function Book() {
-	
+	const {state} = useLocation();
+	const book= state;
+
 	//Pegar dados dos livros ------------------------------------------
     const [bookData,setBookData]=useState([]);
     useEffect(()=>{
@@ -30,18 +33,30 @@ function Book() {
     };
 	//--------------------------------------------------------------------
 
-	//valores para os livros relacionados (só vai dar pra implementar realmente com o servidor)
-	let rand=Math.floor(Math.random()*(bookData.length-4));
-	let last=Math.min((rand+4),(bookData.length-1));
+	const relatedBooks = bookData.filter(item => {
+        if((item.author == book.name || item.genre == book.genre) && (item.name != book.name)){return item}
+    })
+
+	function compare( a ) {
+		if ( a.author == book.author ){
+		  return -1;
+		}
+		if ( a.genre == book.genre ){
+		  return 1;
+		}
+		return 0;
+	}
+	  
+	relatedBooks.sort( compare );
+
+
 	const related={
 		"title":"Livros Relacionados",
 		"text":"",
-		"products":bookData.slice(rand,last),
+		"products":relatedBooks,
 		"class":"section box related"
 	};
 	
-	const {state} = useLocation();
-	const book= state;
 	//basicamente o html da página com a função de adicionar o item no carrinho
 	return(
 		<>
