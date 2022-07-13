@@ -1,0 +1,101 @@
+.login-base{
+	display: flex;
+	flex-direction: column;
+	padding-top: 30px;
+	align-items: center;
+	width: 450px;
+	height: 500px;
+	background-color: white;
+	margin: 4%;
+	border-radius: 25px;
+}
+
+.erro {
+    border-radius: 10px;
+    background-color: rgb(252, 79, 79);
+    width: 75%;
+    padding: 10px;
+}
+
+.aprovado {
+    border-radius: 10px;
+    background-color: rgb(79, 145, 252);
+    width: 75%;
+    padding: 10px;
+}
+
+.login-base-param {
+	width: 65%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.login-group{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: #232323;
+}
+.login-btn{
+	background-color: rgba(100, 100, 100, 1.0);
+	margin-top: 10px;
+	color: white;
+	height: 50px;
+	border: 0px;
+	border-radius: 20px;
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all ease-in-out 0.2s;
+}
+
+.login-btn-del{
+	background-color: rgb(252, 79, 79);
+	margin-top: 10px;
+	color: white;
+	height: 50px;
+	border: 0px;
+	border-radius: 20px;
+	font-size: 18px;
+	padding-left: 20px;
+	padding-right: 20px;
+	transition: all ease-in-out 0.2s;
+}
+
+.login-input{
+	background-color: #E6E6E6;
+	color: #8A8A8A;
+	border: none;
+	padding: 5px;
+	font-size: 12px;
+	width: 200px;
+}
+
+.login-btn:hover{
+	background-color: rgba(130, 130, 130, 1.0);
+	cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+.login-btn:active{
+	background-color: rgba(160, 160, 160, 1.0);
+	cursor: pointer;
+  transition: all ease-in-out 0.2s;
+}
+
+.login-link{
+	color: rgba(130,130,130,1.0);
+}
+.row{
+	display: flex;
+	flex-direction: row;
+	justify-items: center;
+	align-items: center;
+}
+.message1{
+	font-size: 10px;
+}
+
+.create-account-btn{
+	height: 80%;
+	margin: 30px 10px 10px 10px;
+}

@@ -1,0 +1,107 @@
+.box.admin{
+	background-color: black;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.bookedit-base-param {
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.bookedit-input{
+	background-color: #E6E6E6;
+	color: #8A8A8A;
+	border: none;
+	padding: 5px;
+	font-size: 12px;
+	width: 300px;
+}
+.bookedit-base{
+	display: flex;
+	flex-direction: row;
+	padding: 50px;
+	align-items: center;
+	justify-content: center;
+	width: 900px;
+	height: 700px;
+	background-color: white;
+	margin: 4%;
+	border-radius: 25px;
+}
+
+.admin-users-base{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.admin-users-base h2{
+	text-align: left;
+	padding-left: 100px;
+}
+.admin-users-col{
+	width: 450px;
+	height: 400px;
+	background-color: lightgray;
+	border-radius: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	overflow-y: auto;
+}
+
+/* Chrome, Edge, and Safari */
+.admin-users-col::-webkit-scrollbar {
+    width: 5px;
+}
+
+.admin-users-col::-webkit-scrollbar-track {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 20px;
+}
+
+.admin-users-col::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+}
+
+.user-widget{
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	padding: 10px;
+	align-items: center;
+	background-color: white;
+	border-radius: 20px;
+	width: 80%;
+	height: 50px;
+	margin: 5px;
+}
+.user-widget div{
+	padding: 10px;
+}
+.user-widget-btn{
+	background-color: grey;
+	color: white;
+	border-radius: 20px;
+	width: 80px;
+  transition: .2s ease all;
+
+}.user-widget-btn:hover{
+	background-color: lightgrey;
+	cursor: pointer;
+  transition: .2s ease all;
+}.user-widget-btn:active{
+	background-color: white;
+	cursor: pointer;
+  transition: .2s ease all;
+}
