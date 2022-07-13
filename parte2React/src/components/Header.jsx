@@ -36,7 +36,7 @@ function Header() {
                         <i class={ user ? "icon-link fa-solid fa-smile" : "icon-link fa-solid fa-user"}></i>
                     </Link>
                     <a class="icon-circle">
-                        <i class="icon-link fa-solid fa-cart-shopping"></i>
+                        <Link to="/cart"><i class="icon-link fa-solid fa-cart-shopping"></i></Link>
                         <Cart/>
                     </a>
                 </div>

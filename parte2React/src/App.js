@@ -14,7 +14,9 @@ import Admin from './components/admin/Admin';
 import BookEdit from './components/admin/BookEdit';
 import AdminNav from "./components/admin/AdminNav";
 import Users from "./components/admin/Users";
+import CartPage from "./components/CartPage";
 
+import Purchase from "./components/Purchase";
 import {
   BrowserRouter,
   Routes,
@@ -47,6 +49,8 @@ function App() {
             <Route path="/home/account/settings/edit" element={<><NavHeader/><EditSettings /></>}></Route>
             <Route path="/admin" element={<><AdminNav/><Admin/></>}></Route>
             <Route path="/admin/users" element={<><AdminNav/><Users/></>}></Route>
+            <Route path="/cart" element={<><NavHeader/><CartPage/></>}></Route>
+            <Route path="/purchase" element={<><NavHeader/><Purchase/></>}></Route>
           </Routes>
         <Footer />
       </BrowserRouter>

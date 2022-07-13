@@ -17,7 +17,7 @@ function removeItem(id){
 }
 function CartItem({item,index}){
     navigate=useNavigate();
-	console.log("id "+item.id);
+	//console.log("id "+item.id);
 
 	return(
 	<div class="cart-item" onClick={() => clickedCard(item)}>
