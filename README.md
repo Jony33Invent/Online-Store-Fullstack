@@ -15,7 +15,7 @@ Made by:<br/>
 -   Os dados do administrador são: name, id, phone, email.
 -   Os dados do cliente são: name, id, address, phone, email
 -   Os dados de um livro são: name, id, photo, author, description, price, quantity_in_stock, quantity_sold, stars_rate.
-- Vendendo livros: Os livros são selecionados, é escolhida uma quantidade, e eles são incluídos no carrinho. Livros são comprados usando um número de cartão de crédito (qualquer numero é aceito pelo sistema). A quantidade de um produto vendido é subtraída da quantidade no estoque (quantity_in_stock) e adicionada na quantidade vendida (quantity_sold). Carrinhos só são esvaziados com o pagamento ou pelos clientes. 
+- Vendendo livros: Os livros são selecionados, é escolhida uma quantidade, e eles são incluídos no carrinho. Livros são comprados usando um número de cartão de crédito (qualquer numero é aceito pelo sistema). A quantidade de um produto vendido é subtraída da quantidade no estoque (quantity_in_stock). Carrinhos só são esvaziados com o pagamento ou pelos clientes. 
 
 # Project Description
 
