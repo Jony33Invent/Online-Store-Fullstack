@@ -20,13 +20,6 @@ function Categories({category,index}) {
     //pegar livros no servidor -------------------------------------------
     const [bookData,setBookData]=useState([]);
     useEffect(()=>{
-        /*fetch("/books").then(
-            response=>response.json()
-            ).then(
-                data=>{
-                    setBookData(data)
-                }
-            )*/
         fetchItems();
     },[])
     const fetchItems = async () => {

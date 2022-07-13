@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import '.././styles/style.css';
 import '.././styles/admin.css';
 import '.././styles/category.css';
@@ -7,13 +7,30 @@ import UserWidget from './UserWidget'
 
 
 function Users() {
-    var accountsArr = localStorage.getItem("users").split(',');
-    let users = []
-    let n=accountsArr.length;
-    for (let i = 1; i < n; i++) {
-        if(accountsArr[i] != 'admin@email.com')
-            users.push(<div><UserWidget user={{'id':localStorage.getItem(accountsArr[i] + "name"),'email': accountsArr[i]}}/></div>)
-    }  
+
+    //pegar livros no servidor -------------------------------------------
+    const [userData,setUserData]=useState([]);
+    useEffect(()=>{
+        fetchItems();
+    },[])
+    const fetchItems = async () => {
+        const data = await fetch('http://localhost:4000/users');
+        const items = await data.json();
+        setUserData(items);
+    };
+    //----------------------------------------------------------------------
+    //Usuários
+    const userList = userData.filter(item => {
+        if(!item.admin){return item}
+    })
+    const items = userList.map((item) => ( <div><UserWidget user={item}/></div>))
+
+    //Admins
+    const adminList = userData.filter(item => {
+        if(item.admin){return item}
+    })
+    const adminItems = adminList.map((item) => ( <div><UserWidget user={item}/></div>))
+
     return (
         <div>
             <h2>User Manager</h2>
@@ -21,13 +38,13 @@ function Users() {
                 <div>
                     <h2>Clients</h2>
                     <div className="admin-users-col">
-                        {users}
+                        {items}
                     </div>
                 </div>
                 <div>
                     <h2>Admins</h2>
                     <div className="admin-users-col">
-                        <UserWidget user={{'id':localStorage.getItem('admin@email.com' + "name"),'email':'admin@email.com'}}/>
+                        {adminItems}
                     </div>
                 </div>
 

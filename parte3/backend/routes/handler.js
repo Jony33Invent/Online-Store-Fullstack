@@ -28,6 +28,7 @@ exports.put = (req, res, next) => {
 //USERS
 exports.getUser = (req, res, next) => {
 	Data.Users.find({}).then(function (client) {
+		console.log(client)
 		res.status(200).send(client);
 	});
 };
