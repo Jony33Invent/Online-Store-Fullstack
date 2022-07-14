@@ -51,7 +51,7 @@ function Cart() {
 	return(
 			<div class="cart-container" onMouseOver={onMouseEnter}>
 				<div class="cart-col">
-					{cartItens}
+					{cartItens.length>0?cartItens:<>Loading...</>}
 				</div>
 				<Link to={ user ? "/purchase" : "/home/account/login"}><div class="cart-btn">Purchase</div></Link>
 				

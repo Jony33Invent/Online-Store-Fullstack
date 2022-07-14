@@ -6,7 +6,7 @@ import {BrowserRouter as Router,Routes,Route,Link} from "react-router-dom";
 function AdminNav() {
     return (
         <ul>
-            <li><Link to=""><i class="fa-solid fa-house"></i></Link></li>
+            <li><Link to="/admin"><i class="fa-solid fa-house"></i></Link></li>
             <li class="dropdown">
                 <div class="dropdown-content">
                     <Link to="/admin">Books</Link>

@@ -47,13 +47,15 @@ function Categories({category,index}) {
     //Carrega os livros da categoria
     let location = useLocation();
     const bookList = bookData.filter(item => {
-        if(category === ""){
-            return item;
+        if(item.quantity>0){
+            if(category === ""){
+                return item;
+            }
+            else if(item.genre.toLowerCase().includes(category.toLowerCase())){return item}
         }
-        else if(item.genre.toLowerCase().includes(category.toLowerCase())){return item}
     })
 
-    const [itens, setItens] = useState(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+    const [itens, setItens] = useState([])
 
     //Quando o usuário clica em outra categoria os settings resetam e os novos produtos são puxados
     useEffect(() => {
@@ -194,7 +196,7 @@ function Categories({category,index}) {
                             <li class="journey-item">{category}</li>
                         </ul>
                         <div class="section category" id="category-div">
-                            {itens}
+                            {itens.length>0?itens:<>Loading...</>}
                         </div>
                     </div>
                 </div>

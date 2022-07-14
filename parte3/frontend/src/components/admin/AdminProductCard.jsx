@@ -14,12 +14,12 @@ function AdminProductCard({product}) {
     return (
         <div>
             <div class="product-card" >
-                <img class="product-img" src={product.img}></img>
+                <img style={{width:"70px",height:"100px"}}class="product-img" src={product.img}></img>
                 <h2 class="product-title">{product.name}</h2>
                 <p>{product.author}</p>
-                <h3>R$ {product.price.toFixed(2)}</h3>
+                <p>R$ {product.price.toFixed(2)}</p>
                 <h3>Quantity: {product.quantity}</h3>
-                <div class="cart-btn" onClick={()=>editBook(product)}>Edit</div>
+                <div class="cart-btn remove" onClick={()=>editBook(product)}>Edit</div>
             </div>
         </div>
     )

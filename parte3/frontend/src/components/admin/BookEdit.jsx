@@ -113,7 +113,7 @@ const book= state; // Read values passed on state
                 <p class="bookedit-base-param">Quantity: <input class="bookedit-input" type="number" 
                     value={values.quantity} onChange={handleQuantity} ></input></p>
                 <input type="submit" class="login-btn" name="" value="Apply Changes"></input>
-                <input type="button" class="login-btn" onClick={handleDelete} name="" value="Delete Book"></input>
+                <input type="button" class="login-btn" style={{backgroundColor:"rgb(252, 79, 79)",margin:"20px"}} onClick={handleDelete} name="" value="Delete Book"></input>
 
                 </div>
 

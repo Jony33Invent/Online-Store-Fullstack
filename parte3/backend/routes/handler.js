@@ -25,6 +25,19 @@ exports.put = (req, res, next) => {
 	});
 };
 
+
+exports.getById = (req, res, next) => {
+	const _id = req.params._id;
+
+	Data.Books.findOne({ _id: _id }).then(function (book) {
+		if (book) {
+			res.status(200).send(book);
+		} else {
+			res.status(404).send();
+		}
+	});
+};
+
 exports.deleteBook = (req, res, next) => {
 	const _id = req.params._id;
 	Data.Books.findOneAndDelete({ _id: _id }).then(function (book) {

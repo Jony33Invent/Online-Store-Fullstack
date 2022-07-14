@@ -6,6 +6,7 @@ const controller = require('../routes/handler');
 
 //LIVROS
 router.get('/books', controller.get);
+router.get('/books/:_id', controller.getById);
 router.put('/books', controller.put);
 router.delete('/books/:_id', controller.deleteBook);
 

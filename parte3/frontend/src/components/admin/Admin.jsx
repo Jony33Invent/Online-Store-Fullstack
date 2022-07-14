@@ -25,7 +25,7 @@ function Admin() {
 
     return (
         <div>
-            <h2>Administrator</h2>
+            <h2>Books in Stock</h2>
             <AdminSection section={populares}></AdminSection>
         </div>
     )

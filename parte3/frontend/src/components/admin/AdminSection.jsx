@@ -18,8 +18,8 @@ function AdminSection({section}) {
     return (
         <>
             <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-        <div class={section.class}>
-            {productCards}
+        <div class={section.class}  style={{backgroundColor:"#D0D0D0"}}>
+            {(productCards.length>0)?productCards:<>Loading...</>}
         </div>
          <div class="cart-btn" onClick={()=>createBook()}>Create New Book</div>
          </div>

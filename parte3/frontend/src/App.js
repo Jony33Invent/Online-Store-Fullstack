@@ -53,8 +53,8 @@ function App() {
             <Route path="/home/account" element={<><EditSettings /></>}></Route>
             <Route path="/home/account/settings" element={<><ClientSettings /></>}></Route>
             <Route path="/home/account/settings/edit" element={<><EditSettings /></>}></Route>
-            <Route path="/admin" element={<><Admin/></>}></Route>
-            <Route path="/admin/users" element={<><Users/></>}></Route>
+            <Route path="/admin" element={(admin=='1')?<Admin/>:<Home/>}></Route>
+            <Route path="/admin/users" element={(admin=='1')?<Users/>:<Home/>}></Route>
             <Route path="/cart" element={<><CartPage/></>}></Route>
             <Route path="/purchase" element={<><Purchase/></>}></Route>
           </Routes>

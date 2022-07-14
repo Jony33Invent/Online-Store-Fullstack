@@ -35,10 +35,14 @@ function Header() {
                     <Link class="icon-circle"to={ user ? "/home/account/settings" : "/home/account/login"}>
                         <i class={ user ? "icon-link fa-solid fa-smile" : "icon-link fa-solid fa-user"}></i>
                     </Link>
-                    <a class="icon-circle">
-                        <Link to="/cart"><i class="icon-link fa-solid fa-cart-shopping"></i></Link>
-                        <Cart/>
-                    </a>
+                    {
+                        (admin!=true)?<>
+                            <a class="icon-circle">
+                                <Link to="/cart"><i class="icon-link fa-solid fa-cart-shopping"></i></Link>
+                                <Cart/>
+                            </a>
+                        </>:<></>
+                    }
                 </div>
             </div>
         </div>

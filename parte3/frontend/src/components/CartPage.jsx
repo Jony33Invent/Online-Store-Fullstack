@@ -11,6 +11,7 @@ import SectionBox from './home/SectionBox';
 
 function CartPage() {
 
+let user = localStorage.getItem("user");
     const [bookData,setBookData]=useState([]);
     let cart = JSON.parse(localStorage.getItem('cart'));
     if(cart==null)
@@ -31,7 +32,6 @@ function CartPage() {
                 cartItens.push(<CartProductCard product={book} index={i}/>)
         });
     });
-    console.log(bookData);
     return (
         <div>
             <div class="title-div">
@@ -53,7 +53,7 @@ function CartPage() {
                             <i  style={{fontSize:'100px',color:'#FFFFFF88'}}class="fa-solid fa-cart-arrow-down"></i>
                             </div></>}
                 </div>
-                {(cartItens.length>0)?<Link to="/purchase" class="cart-btn compra">Purchase</Link>:<></>}
+                {(cartItens.length>0)?<Link  to={ user ? "/purchase" : "/home/account/login"} class="cart-btn compra">Purchase</Link>:<></>}
             </div>
         </div>
     )
