@@ -24,7 +24,7 @@ function CartItem({item,index}){
 		<img src={item.img} alt="item"></img>
 		<p class="cart-item-title">{item.name}</p>
 		<p class="cart-item-price">R$ {item.price.toFixed(2)}</p>
-		<a class="delete-cart-item" onClick={() => removeItem(index)}><i class="fa-solid fa-square-xmark"></i></a>
+		<a class="delete-cart-item" href="#self" onClick={() => removeItem(index)}><i class="fa-solid fa-square-xmark"></i></a>
 	</div>)
 }
 

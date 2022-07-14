@@ -7,8 +7,6 @@ import './styles/book.css';
 import CartProductCard from './CartProductCard';
 import {Link} from "react-router-dom";
 
-import SectionBox from './home/SectionBox';
-
 function CartPage() {
 
 let user = localStorage.getItem("user");
@@ -28,7 +26,7 @@ let user = localStorage.getItem("user");
     
     bookData.forEach((book,i)=>{
         cart.forEach((id,i)=>{
-            if(book._id==id)
+            if(book._id===id)
                 cartItens.push(<CartProductCard product={book} index={i}/>)
         });
     });

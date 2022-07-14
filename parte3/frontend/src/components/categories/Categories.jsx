@@ -16,21 +16,14 @@ function BkColor(id) {
 
 const r = document.querySelector(':root');
 function Categories({category,index}) {
-
+    let location = useLocation();
     //pegar livros no servidor -------------------------------------------
     const [bookData,setBookData]=useState([]);
     useEffect(()=>{
-        /*fetch("/books").then(
-            response=>response.json()
-            ).then(
-                data=>{
-                    setBookData(data)
-                }
-            )*/
         fetchItems();
     },[])
     const fetchItems = async () => {
-        const data = await fetch('http://localhost:4000/books');
+        const data = await fetch('/books');
         const items = await data.json();
         console.log(data)
         console.log(items)
@@ -45,7 +38,6 @@ function Categories({category,index}) {
     const [checked, setChecked] = useState({ az: false, za: false, lowprice: false, bigprice: false });
 
     //Carrega os livros da categoria
-    let location = useLocation();
     const bookList = bookData.filter(item => {
         if(item.quantity>0){
             if(category === ""){
@@ -56,7 +48,7 @@ function Categories({category,index}) {
     })
 
     const [itens, setItens] = useState([])
-
+    const firstItems = bookList.map((item) => ( <div><ProductCard product={item}/></div>))
     //Quando o usuário clica em outra categoria os settings resetam e os novos produtos são puxados
     useEffect(() => {
         setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
@@ -71,7 +63,6 @@ function Categories({category,index}) {
             } else {
                 return 1;
             }
-            return 0;
         });
 
         setChecked(() => {
@@ -94,7 +85,6 @@ function Categories({category,index}) {
             } else {
                 return -1;
             }
-            return 0;
         });
 
         setChecked(() => {
@@ -116,7 +106,6 @@ function Categories({category,index}) {
             } else {
                 return -1;
             }
-            return 0;
         });
 
         setChecked(() => {
@@ -138,7 +127,6 @@ function Categories({category,index}) {
             } else {
                 return -1;
             }
-            return 0;
         });
 
         setChecked(() => {
@@ -152,7 +140,7 @@ function Categories({category,index}) {
 
         setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
     }
-
+    console.log(bookList)
     return (
             <>
             <div class="title-div">
@@ -196,7 +184,7 @@ function Categories({category,index}) {
                             <li class="journey-item">{category}</li>
                         </ul>
                         <div class="section category" id="category-div">
-                            {itens.length>0?itens:<>Loading...</>}
+                            {itens.length>0?itens:firstItems}
                         </div>
                     </div>
                 </div>

@@ -31,7 +31,7 @@ function Cart() {
     
     bookData.forEach((book,i)=>{
 		cart.forEach((id,i)=>{
-			if(book._id==id)
+			if(book._id===id)
 				cartItens.push(<CartItem item={book} index={i}/>)
 		});
     });
@@ -51,7 +51,7 @@ function Cart() {
 	return(
 			<div class="cart-container" onMouseOver={onMouseEnter}>
 				<div class="cart-col">
-					{cartItens.length>0?cartItens:<>Loading...</>}
+					{cartItens.length>0?cartItens:<>No items</>}
 				</div>
 				<Link to={ user ? "/purchase" : "/home/account/login"}><div class="cart-btn">Purchase</div></Link>
 				

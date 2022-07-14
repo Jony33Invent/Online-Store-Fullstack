@@ -28,7 +28,8 @@ function Search() {
         }
         else if(item.name.toLowerCase().includes(search.toLowerCase())){return item}
     });
-     const [itens, setItens] = useState(bookList.map((item) => ( <div><ProductCard product={item}/></div>)));
+    const [itens, setItens] = useState(bookList.map((item) => ( <div><ProductCard product={item}/></div>)));
+    const firstItems = bookList.map((item) => ( <div><ProductCard product={item}/></div>))
     r.style.setProperty('--category-color', "#101010");
     r.style.setProperty('--category-section-color', "#101010DC");
 
@@ -179,7 +180,7 @@ function Search() {
                             <li class="journey-item">{search}</li>
                         </ul>
                         <div class="section category" style={{minWidth:'1000px',minHeight:'1000px'}} id="category-div">
-                        {itens}
+                            {itens.length>0?itens:firstItems}
                         </div>
                     </div>
                 </div>
