@@ -25,8 +25,8 @@ function Categories({category,index}) {
     const fetchItems = async () => {
         const data = await fetch('/books');
         const items = await data.json();
-        console.log(data)
-        console.log(items)
+        //console.log(data)
+        //console.log(items)
         setBookData(items);
     };
     //----------------------------------------------------------------------
@@ -44,14 +44,16 @@ function Categories({category,index}) {
                 return item;
             }
             else if(item.genre.toLowerCase().includes(category.toLowerCase())){return item}
+
         }
+           return null;
     })
 
     const [itens, setItens] = useState([])
-    const firstItems = bookList.map((item) => ( <div><ProductCard product={item}/></div>))
+    const firstItems = bookList.map((item) => ( <div key={item._id}><ProductCard  product={item}/></div>))
     //Quando o usuário clica em outra categoria os settings resetam e os novos produtos são puxados
     useEffect(() => {
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard  product={item}/></div>)))
         setChecked({az: false, za: false, lowprice: false, bigprice: false})
      },[location]);
 
@@ -74,7 +76,7 @@ function Categories({category,index}) {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard  product={item}/></div>)))
 
     }
 
@@ -96,7 +98,7 @@ function Categories({category,index}) {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard  product={item}/></div>)))
     }
 
     const lowPriceFilter = (event) => {
@@ -117,7 +119,7 @@ function Categories({category,index}) {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard  product={item}/></div>)))
     }
 
     const bigPriceFilter = (event) => {
@@ -138,52 +140,51 @@ function Categories({category,index}) {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard  product={item}/></div>)))
     }
-    console.log(bookList)
     return (
             <>
-            <div class="title-div">
-                <h1 class="category-title"  key={category}>
+            <div className="title-div">
+                <h1 className="category-title"  key={category}>
                     {category}
                 </h1>
             </div>
 
-                <div class="category-main">
-                    <form class="categories-column">
-                        <div class="column-title" > Filter by</div>
+                <div className="category-main">
+                    <form className="categories-column">
+                        <div className="column-title" > Filter by</div>
                         
-                        <label class="btn-category" style={{backgroundColor:(checked.az)?'black':'',
+                        <label className="btn-category" style={{backgroundColor:(checked.az)?'black':'',
                                                             color:(checked.az)?'white':''}} onClick={azFilter}>
-                            <input type="radio" name="filter" checked={checked.az}></input> 
+                            <input type="radio" name="filter" checked={checked.az} readOnly></input> 
                             A to Z
                         </label>
-                        <label class="btn-category"
+                        <label className="btn-category"
                         style={{backgroundColor:(checked.za)?'black':'',
                                                             color:(checked.za)?'white':''}}  onClick={zaFilter}>
-                            <input type="radio" name="filter" checked={checked.za}></input> 
+                            <input type="radio" name="filter" checked={checked.za} readOnly></input> 
                             Z to A
                         </label>
-                        <label class="btn-category" style={{backgroundColor:(checked.lowprice)?'black':'',
+                        <label className="btn-category" style={{backgroundColor:(checked.lowprice)?'black':'',
                                                             color:(checked.lowprice)?'white':''}} onClick={lowPriceFilter}>
-                            <input type="radio" name="filter" checked={checked.lowprice}></input> 
+                            <input type="radio" name="filter" checked={checked.lowprice} readOnly></input> 
                             Lowest Price
                         </label>
-                        <label class="btn-category" style={{backgroundColor:(checked.bigprice)?'black':'',
+                        <label className="btn-category" style={{backgroundColor:(checked.bigprice)?'black':'',
                                                             color:(checked.bigprice)?'white':''}} onClick={bigPriceFilter}>
-                            <input type="radio" name="filter"checked={checked.bigprice}></input> 
+                            <input type="radio" name="filter"checked={checked.bigprice}readOnly></input> 
                             Biggest Price
                         </label>
                     </form>
                     <div>
-                        <ul class="user-journey">
-                            <Link to="/"><li class="journey-item">Home</li></Link>
-                            <li><i class="fa-solid fa-angle-right"></i></li>
-                            <li class="journey-item">Genres</li>
-                            <li><i class="fa-solid fa-angle-right"></i></li>
-                            <li class="journey-item">{category}</li>
+                        <ul className="user-journey">
+                            <Link to="/"><li className="journey-item">Home</li></Link>
+                            <li><i className="fa-solid fa-angle-right"></i></li>
+                            <li className="journey-item">Genres</li>
+                            <li><i className="fa-solid fa-angle-right"></i></li>
+                            <li className="journey-item">{category}</li>
                         </ul>
-                        <div class="section category" id="category-div">
+                        <div className="section category" id="category-div">
                             {itens.length>0?itens:firstItems}
                         </div>
                     </div>

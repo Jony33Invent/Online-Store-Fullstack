@@ -32,15 +32,15 @@ function ClientSettings() {
     console.log(userData.name)
     return (
         <div className="login-group">
-            <form class="login-base">
+            <form className="login-base">
                 <h1>Settings</h1>
-                <p class="login-base-param">Name: {userData.name} </p>
-                <p class="login-base-param">Adress: {userData.adress} </p>
-                <p class="login-base-param">Email: {userData.email} </p>
+                <p className="login-base-param">Name: {userData.name} </p>
+                <p className="login-base-param">Adress: {userData.adress} </p>
+                <p className="login-base-param">Email: {userData.email} </p>
             
-                <input type="submit" class="login-btn" name="" value="Exit account" onClick={handleExit}></input>
+                <input type="submit" className="login-btn" name="" value="Exit account" onClick={handleExit}></input>
                 <Link to="/home/account/settings/edit">
-                    <input type="button" class="login-btn" name="" value="Edit account"></input>
+                    <input type="button" className="login-btn" name="" value="Edit account"></input>
                 </Link>
             </form>
         </div>

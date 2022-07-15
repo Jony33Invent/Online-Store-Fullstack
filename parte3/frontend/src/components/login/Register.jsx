@@ -57,17 +57,17 @@ function Login() {
 
 
     return (
-        <div class="login-group">
-            <form class="login-base" onSubmit={handleSubmit}>
+        <div className="login-group">
+            <form className="login-base" onSubmit={handleSubmit}>
                 <h1>Register</h1>
                 {!firstTry && (!filledData) ? <div className="erro">ERRO: verifique se as informações inseridas estão corretas</div> : null}
                 {filledData ? <div className="aprovado">Usuário criado</div> : null}
-                <p class="login-base-param">Name: <input class="login-input" type="text" onChange={handleName}></input></p>
-                <p class="login-base-param">Adress: <input class="login-input" type="text" onChange={handleAdress}></input></p>
-                <p class="login-base-param">E-mail: <input class="login-input" type="text" onChange={handleEmail}></input></p>
-                <p class="login-base-param">Password: <input class="login-input" type="password" onChange={handlePassword}></input></p>
-                <input type="submit" class="login-btn" name="" value="Create Account"></input>
-                <p>Already have an account <Link to="/home/account/login"><a href="" class="login-link">Login</a></Link></p>
+                <p className="login-base-param">Name: <input className="login-input" type="text" onChange={handleName}></input></p>
+                <p className="login-base-param">Adress: <input className="login-input" type="text" onChange={handleAdress}></input></p>
+                <p className="login-base-param">E-mail: <input className="login-input" type="text" onChange={handleEmail}></input></p>
+                <p className="login-base-param">Password: <input className="login-input" type="password" onChange={handlePassword}></input></p>
+                <input type="submit" className="login-btn" name="" value="Create Account"></input>
+                <p>Already have an account <Link to="/home/account/login"><a href="/" className="login-link">Login</a></Link></p>
             </form>
         </div>
     )

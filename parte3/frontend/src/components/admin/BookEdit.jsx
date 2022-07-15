@@ -92,33 +92,33 @@ const book= state; // Read values passed on state
         setValues({...values, genre: event.target.value})
     }
     return (
-        <div class="login-group">
-            <form class="bookedit-base" onSubmit={handleSubmit}>
+        <div className="login-group">
+            <form className="bookedit-base" onSubmit={handleSubmit}>
                 <div>
                 <h1><b>Edit Book</b></h1>
-                <p class="bookedit-base-param">Name: <input class="bookedit-input" type="text" 
+                <p className="bookedit-base-param">Name: <input className="bookedit-input" type="text" 
                     value={values.name} onChange={handleName}></input></p>
-                <p class="bookedit-base-param">Author: <input class="bookedit-input" type="text" 
+                <p className="bookedit-base-param">Author: <input className="bookedit-input" type="text" 
                     value={values.author} onChange={handleAuthor}></input></p>
-                <p class="bookedit-base-param">Description Title: <input class="bookedit-input" type="text" 
+                <p className="bookedit-base-param">Description Title: <input className="bookedit-input" type="text" 
                     value={values.descriptionTitle}  onChange={handleDescriptionTitle}></input></p>
-                <p class="bookedit-base-param">Description Text: <textarea style={{height:'100px'}} class="bookedit-input" type="textarea" 
+                <p className="bookedit-base-param">Description Text: <textarea style={{height:'100px'}} className="bookedit-input" type="textarea" 
                     value={values.descriptionText} onChange={handleDescriptionText}></textarea></p>
-                <p class="bookedit-base-param">Price: <input class="bookedit-input" type="text" 
+                <p className="bookedit-base-param">Price: <input className="bookedit-input" type="text" 
                     value={values.price}  onChange={handlePrice}></input></p>
-                <p class="bookedit-base-param">Image: <input class="bookedit-input" type="text" 
+                <p className="bookedit-base-param">Image: <input className="bookedit-input" type="text" 
                     value={values.img} onChange={handleImage} ></input></p>
-                <p class="bookedit-base-param">Genres: <input class="bookedit-input" type="text" 
+                <p className="bookedit-base-param">Genres: <input className="bookedit-input" type="text" 
                     value={values.genre} onChange={handleGenre} ></input></p>
-                <p class="bookedit-base-param">Quantity: <input class="bookedit-input" type="number" 
+                <p className="bookedit-base-param">Quantity: <input className="bookedit-input" type="number" 
                     value={values.quantity} onChange={handleQuantity} ></input></p>
-                <input type="submit" class="login-btn" name="" value="Apply Changes"></input>
-                <input type="button" class="login-btn" style={{backgroundColor:"rgb(252, 79, 79)",margin:"20px"}} onClick={handleDelete} name="" value="Delete Book"></input>
+                <input type="submit" className="login-btn" name="" value="Apply Changes"></input>
+                <input type="button" className="login-btn" style={{backgroundColor:"rgb(252, 79, 79)",margin:"20px"}} onClick={handleDelete} name="" value="Delete Book"></input>
 
                 </div>
 
-                <div class="book-image">
-                    <img id="hunger-games" src={book.img}></img>
+                <div className="book-image">
+                    <img alt="book cover" id="hunger-games" src={book.img}></img>
                 </div>
             </form>
         </div>

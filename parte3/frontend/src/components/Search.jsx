@@ -26,10 +26,11 @@ function Search() {
         if(search === ""){
             return item;
         }
-        else if(item.name.toLowerCase().includes(search.toLowerCase())){return item}
+        else if(item.name.toLowerCase().includes(search.toLowerCase())){return item}else
+            return null;
     });
-    const [itens, setItens] = useState(bookList.map((item) => ( <div><ProductCard product={item}/></div>)));
-    const firstItems = bookList.map((item) => ( <div><ProductCard product={item}/></div>))
+    const [itens, setItens] = useState(bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>)));
+    const firstItems = bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>))
     r.style.setProperty('--category-color', "#101010");
     r.style.setProperty('--category-section-color', "#101010DC");
 
@@ -40,7 +41,7 @@ function Search() {
     let location = useLocation();
 
     useEffect(() => {
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>)))
         setChecked({az: false, za: false, lowprice: false, bigprice: false})
      },[location]);
 
@@ -51,7 +52,7 @@ function Search() {
             } else {
                 return 1;
             }
-            return 0;
+            
         });
 
         setChecked(() => {
@@ -63,7 +64,7 @@ function Search() {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>)))
 
     }
 
@@ -74,7 +75,7 @@ function Search() {
             } else {
                 return -1;
             }
-            return 0;
+            
         });
 
         setChecked(() => {
@@ -86,7 +87,7 @@ function Search() {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>)))
     }
 
     const lowPriceFilter = (event) => {
@@ -96,7 +97,7 @@ function Search() {
             } else {
                 return -1;
             }
-            return 0;
+            
         });
 
         setChecked(() => {
@@ -108,7 +109,7 @@ function Search() {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>)))
     }
 
     const bigPriceFilter = (event) => {
@@ -118,7 +119,7 @@ function Search() {
             } else {
                 return -1;
             }
-            return 0;
+            
         });
 
         setChecked(() => {
@@ -130,13 +131,13 @@ function Search() {
             };
             });
 
-        setItens(bookList.map((item) => ( <div><ProductCard product={item}/></div>)))
+        setItens(bookList.map((item) => ( <div key={item._id}><ProductCard product={item}/></div>)))
     }
     return (
             <>
 
-            <div class="title-div">
-                <h1 class="category-title" style={{ 
+            <div className="title-div">
+                <h1 className="category-title" style={{ 
       backgroundImage: `url("https://static01.nyt.com/images/2015/10/24/opinion/24manguel/24manguel-superJumbo.jpg")` ,
         backgroundSize: '100%',
         backgroundPosition:'50% 80%'
@@ -144,42 +145,42 @@ function Search() {
                     Search
                 </h1>
             </div>
-                <div class="category-main">
-                    <form class="categories-column">
-                        <div class="column-title" > Filter by</div>
+                <div className="category-main">
+                    <form className="categories-column">
+                        <div className="column-title" > Filter by</div>
                         
-                        <label class="btn-category" style={{backgroundColor:(checked.az)?'black':'',
+                        <label className="btn-category" style={{backgroundColor:(checked.az)?'black':'',
                                                             color:(checked.az)?'white':''}} onClick={azFilter}>
-                            <input type="radio" name="filter" checked={checked.az}></input> 
+                            <input type="radio" name="filter" checked={checked.az} readOnly></input> 
                             A to Z
                         </label>
-                        <label class="btn-category"
+                        <label className="btn-category"
                         style={{backgroundColor:(checked.za)?'black':'',
                                                             color:(checked.za)?'white':''}}  onClick={zaFilter}>
-                            <input type="radio" name="filter" checked={checked.za}></input> 
+                            <input type="radio" name="filter" checked={checked.za} readOnly></input> 
                             Z to A
                         </label>
-                        <label class="btn-category" style={{backgroundColor:(checked.lowprice)?'black':'',
+                        <label className="btn-category" style={{backgroundColor:(checked.lowprice)?'black':'',
                                                             color:(checked.lowprice)?'white':''}} onClick={lowPriceFilter}>
-                            <input type="radio" name="filter" checked={checked.lowprice}></input> 
+                            <input type="radio" name="filter" checked={checked.lowprice} readOnly></input> 
                             Lowest Price
                         </label>
-                        <label class="btn-category" style={{backgroundColor:(checked.bigprice)?'black':'',
+                        <label className="btn-category" style={{backgroundColor:(checked.bigprice)?'black':'',
                                                             color:(checked.bigprice)?'white':''}} onClick={bigPriceFilter}>
-                            <input type="radio" name="filter"checked={checked.bigprice}></input> 
+                            <input type="radio" name="filter"checked={checked.bigprice} readOnly></input> 
                             Biggest Price
                         </label>
                     </form>
 
                     <div>
-                        <ul class="user-journey">
-                            <Link to="/"><li class="journey-item">Home</li></Link>
-                            <li><i class="fa-solid fa-angle-right"></i></li>
-                            <li class="journey-item">Search</li>
-                            <li><i class="fa-solid fa-angle-right"></i></li>
-                            <li class="journey-item">{search}</li>
+                        <ul className="user-journey">
+                            <Link to="/"><li className="journey-item">Home</li></Link>
+                            <li><i className="fa-solid fa-angle-right"></i></li>
+                            <li className="journey-item">Search</li>
+                            <li><i className="fa-solid fa-angle-right"></i></li>
+                            <li className="journey-item">{search}</li>
                         </ul>
-                        <div class="section category" style={{minWidth:'1000px',minHeight:'1000px'}} id="category-div">
+                        <div className="section category" style={{minWidth:'1000px',minHeight:'1000px'}} id="category-div">
                             {itens.length>0?itens:firstItems}
                         </div>
                     </div>

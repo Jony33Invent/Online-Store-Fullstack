@@ -1,7 +1,7 @@
 import React from "react";
 import AdminProductCard from './AdminProductCard';
 
-import { useLocation,useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 let navigate;
 function createBook(){
     navigate('/book/create');  
@@ -13,15 +13,15 @@ function AdminSection({section}) {
     
     let productCards = []
     for (let i = 0; i < section.products.length; i++) {
-      productCards.push(<AdminProductCard product={section.products[i]}/>)
+      productCards.push(<AdminProductCard key={i} product={section.products[i]}/>)
     }   
     return (
         <>
             <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
-        <div class={section.class}  style={{backgroundColor:"#D0D0D0"}}>
+        <div className={section.class}  style={{backgroundColor:"#D0D0D0"}}>
             {(productCards.length>0)?productCards:<>Loading...</>}
         </div>
-         <div class="cart-btn" onClick={()=>createBook()}>Create New Book</div>
+         <div className="cart-btn" onClick={()=>createBook()}>Create New Book</div>
          </div>
         </>
     )

@@ -6,9 +6,9 @@ import {Link} from "react-router-dom";
 function NavHeader() {
     return (
         <ul>
-            <li><Link to="/"><i class="fa-solid fa-house"></i></Link></li>
-            <li class="dropdown">
-                <div class="dropdown-content">
+            <li><Link to="/"><i className="fa-solid fa-house"></i></Link></li>
+            <li className="dropdown">
+                <div className="dropdown-content">
                     <Link to="/categories/adventure">Adventure</Link>
                     <Link to="/categories/horror">Horror</Link>
                     <Link to="/categories/romance">Romance</Link>

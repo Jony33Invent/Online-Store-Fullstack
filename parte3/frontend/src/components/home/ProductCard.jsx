@@ -12,9 +12,9 @@ function clickedCard(book){
 function ProductCard({product}) {
     navigate=useNavigate();
     return (
-        <div class="product-card" onClick={() => clickedCard(product)}>
-            <img class="product-img" src={product.img}></img>
-            <h2 class="product-title">{product.name}</h2>
+        <div className="product-card" onClick={() => clickedCard(product)}>
+            <img alt="book cover" className="product-img" src={product.img}></img>
+            <h2 className="product-title">{product.name}</h2>
             <p>{product.author}</p>
             <h3>R$ {product.price.toFixed(2)}</h3>
         </div>

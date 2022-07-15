@@ -12,29 +12,29 @@ function clickedCard(book){
 
 
 function removeItem(id){
-    console.log("Removeu:")
+    //console.log("Removeu:")
     let cart = JSON.parse(localStorage.getItem('cart'));
     if(cart==null)
         cart=[];
     cart.splice(id, 1); 
     localStorage.setItem('cart', JSON.stringify(cart));
-    console.log(id);
-    console.log(cart);
+    //console.log(id);
+    //console.log(cart);
     window.location.reload(false)
 }
 
 function CartProductCard({product,index}) {
     navigate=useNavigate();
     return (
-        <div class="cart-product">
+        <div className="cart-product">
         
-            <div class="product-card" onClick={() => clickedCard(product)}>
-                <img class="product-img" src={product.img}></img>
-                <h2 class="product-title">{product.name}</h2>
+            <div className="product-card" onClick={() => clickedCard(product)}>
+                <img alt="book cover" className="product-img" src={product.img}></img>
+                <h2 className="product-title">{product.name}</h2>
                 <p>{product.author}</p>
                 <h3>R$ {product.price.toFixed(2)}</h3>
             </div>
-            <div class="cart-btn remove" onClick={()=>removeItem(index)}>Remove</div>
+            <div className="cart-btn remove" onClick={()=>removeItem(index)}>Remove</div>
         </div>
     )
 

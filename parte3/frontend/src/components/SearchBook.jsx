@@ -34,14 +34,14 @@ function SearchBook() {
     }
     return (
         <div>
-            <div class="search-bar" action="/action_page.php">
+            <div className="search-bar" action="/action_page.php">
                 <input type="text"
                     className="form-control"
                     placeholder="search..."
                     onChange={(event) => {
                         setList(event.target.value);
                 }}onKeyPress={handleKeyPress}></input>
-                <div class="search-btn" onClick={()=>searchButton(list,setList)}><i class="fa fa-search"></i></div>
+                <div className="search-btn" onClick={()=>searchButton(list,setList)}><i className="fa fa-search"></i></div>
             </div>
             {
             <div className="main" style={{display:(list==="")?"none":"flex"}}>
@@ -51,12 +51,13 @@ function SearchBook() {
                     }
                     else if(item.name.toLowerCase()
                         .includes(list.toLowerCase())){return item}
-                }).map((item) => (
+                        return null;
+                }).map((item,i) => (
                 
-                    <div key={item.id}>
-                    <ul className="lista" onClick={() => searchButton(item.name,setList)}>
-                        <li className="item_lista">{item.name}</li>
-                    </ul>
+                    <div key={i}>
+                        <ul className="lista" onClick={() => searchButton(item.name,setList)}>
+                            <li className="item_lista">{item.name}</li>
+                        </ul>
                     </div>
                 ))}
             </div>}

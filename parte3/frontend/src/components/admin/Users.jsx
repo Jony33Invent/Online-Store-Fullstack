@@ -22,14 +22,16 @@ function Users() {
     //Usuários
     const userList = userData.filter(item => {
         if(!item.admin){return item}
+            return null;
     })
-    const items = userList.map((item) => ( <div><UserWidget user={item}/></div>))
+    const items = userList.map((item,i) => ( <div key={'user_'+i}><UserWidget user={item}/></div>))
 
     //Admins
     const adminList = userData.filter(item => {
         if(item.admin){return item}
+            return null;
     })
-    const adminItems = adminList.map((item) => ( <div><UserWidget user={item}/></div>))
+    const adminItems = adminList.map((item,i) => ( <div key={'admin_'+i}><UserWidget user={item}/></div>))
 
     return (
         <div>

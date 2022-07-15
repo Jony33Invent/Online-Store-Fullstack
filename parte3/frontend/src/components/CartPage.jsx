@@ -27,13 +27,13 @@ let user = localStorage.getItem("user");
     bookData.forEach((book,i)=>{
         cart.forEach((id,i)=>{
             if(book._id===id)
-                cartItens.push(<CartProductCard product={book} index={i}/>)
+                cartItens.push(<CartProductCard key={i} product={book} index={i}/>)
         });
     });
     return (
         <div>
-            <div class="title-div">
-                <h1 class="category-title" style={{ 
+            <div className="title-div">
+                <h1 className="category-title" style={{ 
       backgroundImage: `url("https://wallpaperaccess.com/full/2338264.jpg")` ,
         backgroundSize: 'cover',
         backgroundPosition:'0px 58%'
@@ -44,14 +44,14 @@ let user = localStorage.getItem("user");
             <br/>
             <br/>
             <br/>
-            <div class="cart-base">
-                <div class={(cartItens.length>0)?"section box cart-section":"section box cart-empty-section"}>
+            <div className="cart-base">
+                <div className={(cartItens.length>0)?"section box cart-section":"section box cart-empty-section"}>
                     {(cartItens.length>0)?cartItens:<>
                             <div style={{margin:'50px'}}>
-                            <i  style={{fontSize:'100px',color:'#FFFFFF88'}}class="fa-solid fa-cart-arrow-down"></i>
+                            <i  style={{fontSize:'100px',color:'#FFFFFF88'}}className="fa-solid fa-cart-arrow-down"></i>
                             </div></>}
                 </div>
-                {(cartItens.length>0)?<Link  to={ user ? "/purchase" : "/home/account/login"} class="cart-btn compra">Purchase</Link>:<></>}
+                {(cartItens.length>0)?<Link  to={ user ? "/purchase" : "/home/account/login"} className="cart-btn compra">Purchase</Link>:<></>}
             </div>
         </div>
     )

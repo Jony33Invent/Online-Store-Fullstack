@@ -105,17 +105,17 @@ function Login() {
 
 
     return (
-        <div class="login-group">
-            <form class="login-base" onSubmit={handleSubmit}>
+        <div className="login-group">
+            <form className="login-base" onSubmit={handleSubmit}>
                 <h1>Edit Account</h1>
                 {!firstTry && (!filledData) ? <div className="erro">ERRO: verifique se as informações inseridas estão corretas</div> : null}
                 {filledData ? <div className="aprovado">Usuário atualizado</div> : null}
-                <p class="login-base-param">Name: <input class="login-input" type="text" onChange={handleName} value={values.name}></input></p>
-                <p class="login-base-param">Adress: <input class="login-input" type="text" onChange={handleAdress} value={values.adress}></input></p>
-                <p class="login-base-param">E-mail: <input class="login-input" type="text" onChange={handleEmail} value={values.email}></input></p>
-                <p class="login-base-param">Password: <input class="login-input" type="password" onChange={handlePassword} value={values.password}></input></p>
-                <input type="submit" class="login-btn" name="" value="Update Account"></input>
-                <input type="button" class="login-btn-del" name="" value="Delete account" onClick={handleDelete}></input>
+                <p className="login-base-param">Name: <input className="login-input" type="text" onChange={handleName} value={values.name}></input></p>
+                <p className="login-base-param">Adress: <input className="login-input" type="text" onChange={handleAdress} value={values.adress}></input></p>
+                <p className="login-base-param">E-mail: <input className="login-input" type="text" onChange={handleEmail} value={values.email}></input></p>
+                <p className="login-base-param">Password: <input className="login-input" type="password" onChange={handlePassword} value={values.password}></input></p>
+                <input type="submit" className="login-btn" name="" value="Update Account"></input>
+                <input type="button" className="login-btn-del" name="" value="Delete account" onClick={handleDelete}></input>
             </form>
         </div>
     )

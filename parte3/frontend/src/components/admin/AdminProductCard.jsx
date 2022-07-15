@@ -13,13 +13,13 @@ function AdminProductCard({product}) {
     navigate=useNavigate();
     return (
         <div>
-            <div class="product-card" >
-                <img style={{width:"70px",height:"100px"}}class="product-img" src={product.img}></img>
-                <h2 class="product-title">{product.name}</h2>
+            <div className="product-card" >
+                <img alt="book cover" style={{width:"70px",height:"100px"}}className="product-img" src={product.img}></img>
+                <h2 className="product-title">{product.name}</h2>
                 <p>{product.author}</p>
                 <p>R$ {product.price.toFixed(2)}</p>
                 <h3>Quantity: {product.quantity}</h3>
-                <div class="cart-btn remove" onClick={()=>editBook(product)}>Edit</div>
+                <div className="cart-btn remove" onClick={()=>editBook(product)}>Edit</div>
             </div>
         </div>
     )

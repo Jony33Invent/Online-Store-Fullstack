@@ -10,7 +10,7 @@ let user = localStorage.getItem("user");
 
 function onMouseEnter(event) {
 	user = localStorage.getItem("user")
-	console.log(user);
+	//console.log(user);
 }
 
 function Cart() {
@@ -32,14 +32,14 @@ function Cart() {
     bookData.forEach((book,i)=>{
 		cart.forEach((id,i)=>{
 			if(book._id===id)
-				cartItens.push(<CartItem item={book} index={i}/>)
+				cartItens.push(<CartItem key={i} item={book} index={i}/>)
 		});
     });
 
 	if(!cart.length){
 		return(
-				<div class="cart-container" onMouseOver={onMouseEnter} >
-					<div class="cart-logo"><i class="fa-solid fa-cart-arrow-down"></i>
+				<div className="cart-container" onMouseOver={onMouseEnter} >
+					<div className="cart-logo"><i className="fa-solid fa-cart-arrow-down"></i>
 					</div>
 					<h3>Carrinho Vazio</h3>
 					<p>Produtos selecionados aparecerão aqui.</p>
@@ -49,11 +49,11 @@ function Cart() {
 				)
 	}else{
 	return(
-			<div class="cart-container" onMouseOver={onMouseEnter}>
-				<div class="cart-col">
+			<div className="cart-container" onMouseOver={onMouseEnter}>
+				<div className="cart-col">
 					{cartItens.length>0?cartItens:<>No items</>}
 				</div>
-				<Link to={ user ? "/purchase" : "/home/account/login"}><div class="cart-btn">Purchase</div></Link>
+				<Link to={ user ? "/purchase" : "/home/account/login"}><div className="cart-btn">Purchase</div></Link>
 				
 			</div>
 		)

@@ -5,7 +5,6 @@ import { useLocation } from "react-router-dom";
 import SectionBox from '../home/./SectionBox';
 
 //Adiciona cada livro para o carrinho com o localStorage
-let readingMore=false;
 function addToCart(id){
 	let cart = JSON.parse(localStorage.getItem('cart'));
 	if(cart==null)
@@ -35,6 +34,7 @@ function Book() {
 
 	const relatedBooks = bookData.filter(item => {
         if((item.author == book.name || item.genre == book.genre) && (item.name != book.name)){return item}
+        	return null;
     })
 
 	function compare( a ) {
@@ -60,13 +60,13 @@ function Book() {
 	//basicamente o html da página com a função de adicionar o item no carrinho
 	return(
 		<>
-		<div class="div-center">
+		<div className="div-center">
 			<div style={{display: 'flex'}}>
-				<div class="book-image">
-					<img id="hunger-games" src={book.img}></img>
+				<div className="book-image">
+					<img alt="book cover" id="hunger-games" src={book.img}></img>
 				</div>
 
-				<div class="book-infos">
+				<div className="book-infos">
 					<h1>{book.name}</h1>
 					<h3>{book.author}</h3>
 					<p><b>{book.descriptionTitle}</b></p>
@@ -75,16 +75,16 @@ function Book() {
 			</div>
 			
 			<div style={{display: 'flex'}}>
-				<div class="book-buy">
+				<div className="book-buy">
 					<h2>R$ {book.price.toFixed(2)}</h2>
-					<div class="book-buy-button">
-						<button id="comprar"onClick={()=>addToCart(book._id)}> <i class="icon-link fa-solid fa-cart-shopping" ></i> Comprar Agora</button>
+					<div className="book-buy-button">
+						<button id="comprar"onClick={()=>addToCart(book._id)}> <i className="icon-link fa-solid fa-cart-shopping" ></i> Comprar Agora</button>
 					</div>
 				</div>
 
-				<div class="book-genres">
+				<div className="book-genres">
 					<h3>Genre</h3>
-					<div class="genre-bubble" >
+					<div className="genre-bubble" >
 						<p>{book.genre}</p>
 					</div>
 				</div>

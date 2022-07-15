@@ -17,14 +17,13 @@ function removeItem(id){
 }
 function CartItem({item,index}){
     navigate=useNavigate();
-	console.log("id "+item.id);
 
 	return(
-	<div class="cart-item" onClick={() => clickedCard(item)}>
+	<div className="cart-item" onClick={() => clickedCard(item)}>
 		<img src={item.img} alt="item"></img>
-		<p class="cart-item-title">{item.name}</p>
-		<p class="cart-item-price">R$ {item.price.toFixed(2)}</p>
-		<a class="delete-cart-item" href="#self" onClick={() => removeItem(index)}><i class="fa-solid fa-square-xmark"></i></a>
+		<p className="cart-item-title">{item.name}</p>
+		<p className="cart-item-price">R$ {item.price.toFixed(2)}</p>
+		<a className="delete-cart-item" href="#self" onClick={() => removeItem(index)}><i className="fa-solid fa-square-xmark"></i></a>
 	</div>)
 }
 

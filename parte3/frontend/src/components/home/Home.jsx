@@ -36,9 +36,9 @@ function Home() {
 
     return (
         <div>
-            <img src={"https://i.imgur.com/3UgHN6j.png"} class="preview-img" alt="homepage figure"></img>
+            <img src={"https://i.imgur.com/3UgHN6j.png"} className="preview-img" alt="homepage figure"></img>
             {(populares.products.length>0)?<SectionBox section={populares}></SectionBox>:<></>}
-            {(terror.products.length>0)?<SectionBox section={terror}></SectionBox>:<></>}
+            {(terror.products.length>0)?<SectionBox  section={terror}></SectionBox>:<></>}
             
         </div>
     )

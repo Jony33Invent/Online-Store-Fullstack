@@ -51,17 +51,17 @@ function Login() {
     }
 
     return (
-        <div class="login-group">
-            <form class="login-base" onSubmit={handleSubmit}>
+        <div className="login-group">
+            <form className="login-base" onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 {!firstTry && (!filledData || !logged) ? <div className="erro">ERRO: verifique se a senha e/ou e-mail estão corretos</div> : null}
                 {logged ? <div className="aprovado">Login aprovado</div> : null}
-                <p class="login-base-param">E-mail: <input class="login-input" type="text" 
+                <p className="login-base-param">E-mail: <input className="login-input" type="text" 
                     value={values.email} onChange={handleEmail}></input></p>
-                <p class="login-base-param">Password: <input class="login-input" type="password" 
+                <p className="login-base-param">Password: <input className="login-input" type="password" 
                     value={values.password} onChange={handlePassword}></input></p>
-                <input type="submit" class="login-btn" name="" value="Login"></input>
-                <p>Don't have an account <Link to="/home/account/register"><a href="#self" class="login-link">Register</a></Link></p>
+                <input type="submit" className="login-btn" name="" value="Login"></input>
+                <p>Don't have an account <Link to="/home/account/register"><a href="#self" className="login-link">Register</a></Link></p>
             </form>
         </div>
      )
