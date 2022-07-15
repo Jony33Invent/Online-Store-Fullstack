@@ -47,7 +47,7 @@ Nada a comentar.
 # Build Procedures
 É necessário ter o npm e node instalado 
 -	https://www.npmjs.com/package/npm;
--	https://nodejs.org/en/download/;
+-	https://nodejs.org/en/download/ (versão utilizada 17.8);
 
 Baixe os arquivos da pasta parte3, vá até o diretório do frontend e use "npm install". Feito isso, abra o diretório do backend e digite "nodemon start", por fim, inicie-os com npm start.<br/>
 (talvez seja necessário usar o yarn para as rotas yarn add react-router-dom@6)
