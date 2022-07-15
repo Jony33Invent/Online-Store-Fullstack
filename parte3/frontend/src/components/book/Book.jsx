@@ -32,8 +32,8 @@ function Book() {
     };
 	//--------------------------------------------------------------------
 
-	const relatedBooks = bookData.filter(item => {
-        if((item.author == book.name || item.genre == book.genre) && (item.name != book.name)){return item}
+	let relatedBooks = bookData.filter(item => {
+        if((item.author == book.author || item.genre == book.genre) && (item.name != book.name)){return item}
         	return null;
     })
 
@@ -48,7 +48,7 @@ function Book() {
 	}
 	  
 	relatedBooks.sort( compare );
-
+	relatedBooks=relatedBooks.slice(0,4);
 
 	const related={
 		"title":"Livros Relacionados",
